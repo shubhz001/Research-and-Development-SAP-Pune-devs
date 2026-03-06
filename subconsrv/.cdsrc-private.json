@@ -1,0 +1,21 @@
+{
+  "requires": {
+    "[hybrid]": {
+      "db": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.eu10.hana.ondemand.com",
+          "org": "Larsen & Toubro Infotech Ltd_dev",
+          "space": "CrossIndustry",
+          "instance": "ltimsubcon-db",
+          "key": "ltimsubcon-db-key",
+          "resolved": false
+        },
+        "kind": "hana-cloud",
+        "vcap": {
+          "name": "db"
+        }
+      }
+    }
+  }
+}

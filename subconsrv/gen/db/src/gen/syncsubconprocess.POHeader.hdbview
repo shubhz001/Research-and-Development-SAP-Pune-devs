@@ -1,0 +1,29 @@
+VIEW syncsubconprocess_POHeader AS SELECT
+  POHeader_0.PurchaseOrder,
+  POHeader_0.PurchaseOrderType,
+  POHeader_0.CreatedByUser,
+  POHeader_0.CreationDate,
+  POHeader_0.PurchaseOrderDate,
+  POHeader_0.LastChangeDateTime,
+  POHeader_0.ValidityStartDate,
+  POHeader_0.ValidityEndDate,
+  POHeader_0."LANGUAGE",
+  POHeader_0.PurchaseOrderDeletionCode,
+  POHeader_0.ReleaseCode,
+  POHeader_0.CompanyCode,
+  POHeader_0.PurchasingOrganization,
+  POHeader_0.PurchasingGroup,
+  POHeader_0.Supplier,
+  POHeader_0.SupplierAddressID,
+  POHeader_0.SupplyingPlant,
+  POHeader_0.InvoicingParty,
+  POHeader_0.PaymentTerms,
+  POHeader_0.CashDiscount1Days,
+  POHeader_0.CashDiscount2Days,
+  POHeader_0.NetPaymentDays,
+  POHeader_0.DocumentCurrency
+FROM com_ltim_subcon_syncsubconorder_POHeader AS POHeader_0
+WITH ASSOCIATIONS (
+  MANY TO MANY JOIN syncsubconprocess_POItem AS To_PurchaseOrderItem ON (To_PurchaseOrderItem.PurchaseOrder = PurchaseOrder),
+  MANY TO MANY JOIN syncsubconprocess_SubconComponents AS To_SubconComponents ON (To_SubconComponents.PurchaseOrder = PurchaseOrder)
+)

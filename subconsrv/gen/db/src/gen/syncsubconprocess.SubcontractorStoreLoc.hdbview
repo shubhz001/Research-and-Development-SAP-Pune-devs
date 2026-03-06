@@ -1,0 +1,6 @@
+VIEW syncsubconprocess_SubcontractorStoreLoc AS SELECT
+  SubcontractorStoreLoc_0.Subcontractor,
+  SubcontractorStoreLoc_0.Plant,
+  SubcontractorStoreLoc_0.StorageLocation,
+  SubcontractorStoreLoc_0.isSLocInPlant
+FROM com_ltim_subcon_syncsubconorder_SubcontractorStoreLoc AS SubcontractorStoreLoc_0

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="syncsubconprocess" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="POItem" EntityType="syncsubconprocess.POItem">
+          <NavigationPropertyBinding Path="To_SubconComponents" Target="SubconComponents"/>
+        </EntitySet>
+        <EntitySet Name="POHeader" EntityType="syncsubconprocess.POHeader">
+          <NavigationPropertyBinding Path="To_PurchaseOrderItem" Target="POItem"/>
+          <NavigationPropertyBinding Path="To_SubconComponents" Target="SubconComponents"/>
+        </EntitySet>
+        <EntitySet Name="SubconComponents" EntityType="syncsubconprocess.SubconComponents">
+          <NavigationPropertyBinding Path="To_PurchaseOrderItem" Target="POItem"/>
+        </EntitySet>
+        <EntitySet Name="SubcontractorStoreLoc" EntityType="syncsubconprocess.SubcontractorStoreLoc"/>
+        <FunctionImport Name="readPurchaseOrderHeader" Function="syncsubconprocess.readPurchaseOrderHeader"/>
+        <FunctionImport Name="updateStatusAtItem" Function="syncsubconprocess.updateStatusAtItem"/>
+      </EntityContainer>
+      <EntityType Name="POItem">
+        <Key>
+          <PropertyRef Name="PurchaseOrder"/>
+          <PropertyRef Name="PurchaseOrderItem"/>
+        </Key>
+        <Property Name="PurchaseOrder" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="PurchaseOrderItem" Type="Edm.String" MaxLength="5" Nullable="false"/>
+        <Property Name="DocumentCurrency" Type="Edm.String" MaxLength="3"/>
+        <Property Name="MaterialGroup" Type="Edm.String" MaxLength="9"/>
+        <Property Name="Material" Type="Edm.String" MaxLength="18"/>
+        <Property Name="MaterialType" Type="Edm.String" MaxLength="4"/>
+        <Property Name="SupplierMaterialNumber" Type="Edm.String" MaxLength="35"/>
+        <Property Name="ManufacturerPartNmbr" Type="Edm.String" MaxLength="40"/>
+        <Property Name="Manufacturer" Type="Edm.String" MaxLength="10"/>
+        <Property Name="PurchaseOrderItemText" Type="Edm.String" MaxLength="40"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4"/>
+        <Property Name="ManualDeliveryAddressID" Type="Edm.String" MaxLength="10"/>
+        <Property Name="ReferenceDeliveryAddressID" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Subcontractor" Type="Edm.String" MaxLength="10"/>
+        <Property Name="SupplierIsSubcontractor" Type="Edm.Boolean"/>
+        <Property Name="StorageLocation" Type="Edm.String" MaxLength="4"/>
+        <Property Name="PurchaseOrderQuantityUnit" Type="Edm.String" MaxLength="3"/>
+        <Property Name="NetPriceQuantity" Type="Edm.Decimal" Precision="5" Scale="0"/>
+        <Property Name="IsCompletelyDelivered" Type="Edm.Boolean"/>
+        <Property Name="IsFinallyInvoiced" Type="Edm.Boolean"/>
+        <Property Name="IsOrderAcknRqd" Type="Edm.Boolean"/>
+        <Property Name="InvoiceIsGoodsReceiptBased" Type="Edm.Boolean"/>
+        <Property Name="PurchaseRequisition" Type="Edm.String" MaxLength="10"/>
+        <Property Name="PurchaseRequisitionItem" Type="Edm.String" MaxLength="5"/>
+        <Property Name="EvaldRcptSettlmtIsAllowed" Type="Edm.Boolean"/>
+        <Property Name="RequisitionerName" Type="Edm.String" MaxLength="12"/>
+        <Property Name="PurchaseOrderItemCategory" Type="Edm.String" MaxLength="1"/>
+        <Property Name="GoodsReceiptLatestCreationDate" Type="Edm.Date"/>
+        <Property Name="AccountAssignmentCategory" Type="Edm.String" MaxLength="1"/>
+        <Property Name="NetAmount" Type="Edm.Decimal" Precision="13" Scale="0"/>
+        <Property Name="GrossAmount" Type="Edm.Decimal" Precision="13" Scale="0"/>
+        <Property Name="OrderQuantity" Type="Edm.Decimal" Precision="13" Scale="3"/>
+        <Property Name="NetPriceAmount" Type="Edm.Decimal" Precision="11" Scale="0"/>
+        <Property Name="TaxCode" Type="Edm.String" MaxLength="2"/>
+        <Property Name="TaxJurisdiction" Type="Edm.String" MaxLength="15"/>
+        <Property Name="ShippingInstruction" Type="Edm.String" MaxLength="2"/>
+        <Property Name="ScheduleLineDeliveryDate" Type="Edm.Date"/>
+        <Property Name="ShippingDate" Type="Edm.Date"/>
+        <Property Name="AccountAssignmentObject" Type="Edm.String"/>
+        <Property Name="AccountAssignmentObject_desc" Type="Edm.String"/>
+        <Property Name="Status_Item" Type="Edm.String"/>
+        <NavigationProperty Name="To_SubconComponents" Type="Collection(syncsubconprocess.SubconComponents)"/>
+      </EntityType>
+      <EntityType Name="POHeader">
+        <Key>
+          <PropertyRef Name="PurchaseOrder"/>
+        </Key>
+        <Property Name="PurchaseOrder" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="PurchaseOrderType" Type="Edm.String" MaxLength="4"/>
+        <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12"/>
+        <Property Name="CreationDate" Type="Edm.Date"/>
+        <Property Name="PurchaseOrderDate" Type="Edm.Date"/>
+        <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset"/>
+        <Property Name="ValidityStartDate" Type="Edm.Date"/>
+        <Property Name="ValidityEndDate" Type="Edm.Date"/>
+        <Property Name="Language" Type="Edm.String" MaxLength="2"/>
+        <Property Name="PurchaseOrderDeletionCode" Type="Edm.String" MaxLength="1"/>
+        <Property Name="ReleaseCode" Type="Edm.String" MaxLength="1"/>
+        <Property Name="CompanyCode" Type="Edm.String" MaxLength="4"/>
+        <Property Name="PurchasingOrganization" Type="Edm.String" MaxLength="4"/>
+        <Property Name="PurchasingGroup" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Supplier" Type="Edm.String" MaxLength="10"/>
+        <Property Name="SupplierAddressID" Type="Edm.String" MaxLength="10"/>
+        <Property Name="SupplyingPlant" Type="Edm.String" MaxLength="4"/>
+        <Property Name="InvoicingParty" Type="Edm.String" MaxLength="10"/>
+        <Property Name="PaymentTerms" Type="Edm.String" MaxLength="4"/>
+        <Property Name="CashDiscount1Days" Type="Edm.Decimal" Precision="3" Scale="0"/>
+        <Property Name="CashDiscount2Days" Type="Edm.Decimal" Precision="3" Scale="0"/>
+        <Property Name="NetPaymentDays" Type="Edm.Decimal" Precision="3" Scale="0"/>
+        <Property Name="DocumentCurrency" Type="Edm.String" MaxLength="3"/>
+        <NavigationProperty Name="To_PurchaseOrderItem" Type="Collection(syncsubconprocess.POItem)"/>
+        <NavigationProperty Name="To_SubconComponents" Type="Collection(syncsubconprocess.SubconComponents)"/>
+      </EntityType>
+      <EntityType Name="SubconComponents">
+        <Key>
+          <PropertyRef Name="PurchaseOrder"/>
+          <PropertyRef Name="PurchaseOrderItem"/>
+          <PropertyRef Name="ScheduleLine"/>
+          <PropertyRef Name="ReservationItem"/>
+          <PropertyRef Name="RecordType"/>
+        </Key>
+        <Property Name="PurchaseOrder" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="PurchaseOrderItem" Type="Edm.String" MaxLength="5" Nullable="false"/>
+        <Property Name="ScheduleLine" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="ReservationItem" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="RecordType" Type="Edm.String" MaxLength="1" Nullable="false"/>
+        <Property Name="Material" Type="Edm.String" MaxLength="18"/>
+        <Property Name="Reservation" Type="Edm.String" MaxLength="10"/>
+        <Property Name="RequiredQuantity" Type="Edm.Decimal" Precision="13" Scale="3"/>
+        <Property Name="TransferredQuantity" Type="Edm.Decimal" Precision="13" Scale="3"/>
+        <Property Name="RequirementDate" Type="Edm.Date"/>
+        <Property Name="RequirementTime" Type="Edm.TimeOfDay"/>
+        <Property Name="ReservationIsFinallyIssued" Type="Edm.Boolean"/>
+        <Property Name="BaseUnit" Type="Edm.String" MaxLength="3"/>
+        <Property Name="QuantityInEntryUnit" Type="Edm.Decimal" Precision="13" Scale="3"/>
+        <Property Name="EntryUnit" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4"/>
+        <Property Name="BillOfMaterialItemNumber" Type="Edm.String" MaxLength="4"/>
+        <Property Name="BOMItemCategory" Type="Edm.String" MaxLength="1"/>
+        <Property Name="AccountAssignmentCategory" Type="Edm.String" MaxLength="1"/>
+        <Property Name="InventorySpecialStockType" Type="Edm.String" MaxLength="1"/>
+        <Property Name="InventorySpecialStockValnType" Type="Edm.String" MaxLength="1"/>
+        <Property Name="QuantityIsFixed" Type="Edm.Boolean"/>
+        <Property Name="ComponentScrapInPercent" Type="Edm.Decimal" Precision="5" Scale="2"/>
+        <Property Name="StorageLocation" Type="Edm.String" MaxLength="4"/>
+        <Property Name="ProductionSupplyArea" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Batch" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Status_Subcon" Type="Edm.String"/>
+        <NavigationProperty Name="To_PurchaseOrderItem" Type="Collection(syncsubconprocess.POItem)"/>
+      </EntityType>
+      <EntityType Name="SubcontractorStoreLoc">
+        <Key>
+          <PropertyRef Name="Subcontractor"/>
+          <PropertyRef Name="Plant"/>
+        </Key>
+        <Property Name="Subcontractor" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="StorageLocation" Type="Edm.String" MaxLength="4"/>
+        <Property Name="isSLocInPlant" Type="Edm.Boolean"/>
+      </EntityType>
+      <Function Name="readPurchaseOrderHeader" IsBound="false" IsComposable="false">
+        <Parameter Name="purchaseorderid" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Function Name="updateStatusAtItem" IsBound="false" IsComposable="false">
+        <Parameter Name="PurchaseOrder" Type="Edm.String"/>
+        <Parameter Name="PurchaseOrderItem" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

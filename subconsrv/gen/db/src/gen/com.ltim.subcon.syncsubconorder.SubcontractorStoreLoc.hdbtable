@@ -1,0 +1,7 @@
+COLUMN TABLE com_ltim_subcon_syncsubconorder_SubcontractorStoreLoc (
+  Subcontractor NVARCHAR(10) NOT NULL,
+  Plant NVARCHAR(4) NOT NULL,
+  StorageLocation NVARCHAR(4),
+  isSLocInPlant BOOLEAN,
+  PRIMARY KEY(Subcontractor, Plant)
+)

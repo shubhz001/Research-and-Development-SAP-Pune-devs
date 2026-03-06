@@ -1,0 +1,29 @@
+COLUMN TABLE com_ltim_subcon_syncsubconorder_POHeader (
+  PurchaseOrder NVARCHAR(10) NOT NULL,
+  PurchaseOrderType NVARCHAR(4),
+  CreatedByUser NVARCHAR(12),
+  CreationDate DATE,
+  PurchaseOrderDate DATE,
+  LastChangeDateTime SECONDDATE,
+  ValidityStartDate DATE,
+  ValidityEndDate DATE,
+  "LANGUAGE" NVARCHAR(2),
+  PurchaseOrderDeletionCode NVARCHAR(1),
+  ReleaseCode NVARCHAR(1),
+  CompanyCode NVARCHAR(4),
+  PurchasingOrganization NVARCHAR(4),
+  PurchasingGroup NVARCHAR(3),
+  Supplier NVARCHAR(10),
+  SupplierAddressID NVARCHAR(10),
+  SupplyingPlant NVARCHAR(4),
+  InvoicingParty NVARCHAR(10),
+  PaymentTerms NVARCHAR(4),
+  CashDiscount1Days DECIMAL(3, 0),
+  CashDiscount2Days DECIMAL(3, 0),
+  NetPaymentDays DECIMAL(3, 0),
+  DocumentCurrency NVARCHAR(3),
+  PRIMARY KEY(PurchaseOrder)
+) WITH ASSOCIATIONS (
+  MANY TO MANY JOIN com_ltim_subcon_syncsubconorder_POItem AS To_PurchaseOrderItem ON (To_PurchaseOrderItem.PurchaseOrder = PurchaseOrder),
+  MANY TO MANY JOIN com_ltim_subcon_syncsubconorder_SubconComponents AS To_SubconComponents ON (To_SubconComponents.PurchaseOrder = PurchaseOrder)
+)

@@ -1,0 +1,32 @@
+COLUMN TABLE com_ltim_subcon_syncsubconorder_SubconComponents (
+  PurchaseOrder NVARCHAR(10) NOT NULL,
+  PurchaseOrderItem NVARCHAR(5) NOT NULL,
+  ScheduleLine NVARCHAR(4) NOT NULL,
+  ReservationItem NVARCHAR(4) NOT NULL,
+  RecordType NVARCHAR(1) NOT NULL,
+  Material NVARCHAR(18),
+  Reservation NVARCHAR(10),
+  RequiredQuantity DECIMAL(13, 3),
+  TransferredQuantity DECIMAL(13, 3),
+  RequirementDate DATE,
+  RequirementTime TIME,
+  ReservationIsFinallyIssued BOOLEAN,
+  BaseUnit NVARCHAR(3),
+  QuantityInEntryUnit DECIMAL(13, 3),
+  EntryUnit NVARCHAR(3),
+  Plant NVARCHAR(4),
+  BillOfMaterialItemNumber NVARCHAR(4),
+  BOMItemCategory NVARCHAR(1),
+  AccountAssignmentCategory NVARCHAR(1),
+  InventorySpecialStockType NVARCHAR(1),
+  InventorySpecialStockValnType NVARCHAR(1),
+  QuantityIsFixed BOOLEAN,
+  ComponentScrapInPercent DECIMAL(5, 2),
+  StorageLocation NVARCHAR(4),
+  ProductionSupplyArea NVARCHAR(10),
+  Batch NVARCHAR(10),
+  Status_Subcon NVARCHAR(5000),
+  PRIMARY KEY(PurchaseOrder, PurchaseOrderItem, ScheduleLine, ReservationItem, RecordType)
+) WITH ASSOCIATIONS (
+  MANY TO MANY JOIN com_ltim_subcon_syncsubconorder_POItem AS To_PurchaseOrderItem ON (To_PurchaseOrderItem.PurchaseOrder = PurchaseOrder)
+)

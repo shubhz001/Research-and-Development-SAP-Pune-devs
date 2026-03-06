@@ -1,0 +1,32 @@
+VIEW syncsubconprocess_SubconComponents AS SELECT
+  SubconComponents_0.PurchaseOrder,
+  SubconComponents_0.PurchaseOrderItem,
+  SubconComponents_0.ScheduleLine,
+  SubconComponents_0.ReservationItem,
+  SubconComponents_0.RecordType,
+  SubconComponents_0.Material,
+  SubconComponents_0.Reservation,
+  SubconComponents_0.RequiredQuantity,
+  SubconComponents_0.TransferredQuantity,
+  SubconComponents_0.RequirementDate,
+  SubconComponents_0.RequirementTime,
+  SubconComponents_0.ReservationIsFinallyIssued,
+  SubconComponents_0.BaseUnit,
+  SubconComponents_0.QuantityInEntryUnit,
+  SubconComponents_0.EntryUnit,
+  SubconComponents_0.Plant,
+  SubconComponents_0.BillOfMaterialItemNumber,
+  SubconComponents_0.BOMItemCategory,
+  SubconComponents_0.AccountAssignmentCategory,
+  SubconComponents_0.InventorySpecialStockType,
+  SubconComponents_0.InventorySpecialStockValnType,
+  SubconComponents_0.QuantityIsFixed,
+  SubconComponents_0.ComponentScrapInPercent,
+  SubconComponents_0.StorageLocation,
+  SubconComponents_0.ProductionSupplyArea,
+  SubconComponents_0.Batch,
+  SubconComponents_0.Status_Subcon
+FROM com_ltim_subcon_syncsubconorder_SubconComponents AS SubconComponents_0
+WITH ASSOCIATIONS (
+  MANY TO MANY JOIN syncsubconprocess_POItem AS To_PurchaseOrderItem ON (To_PurchaseOrderItem.PurchaseOrder = PurchaseOrder)
+)

@@ -1,0 +1,7 @@
+{
+  "service/service-specs/CE_PURCHASEORDER_0001.edmx": {
+    "packageName": "ce_purchaseorder_0001",
+    "directoryName": "CE_PURCHASEORDER_0001",
+    "basePath": "/sap/opu/odata4/sap/api_purchaseorder_2/srvd_a2x/sap/purchaseorder/0001"
+  }
+}

@@ -1,0 +1,1061 @@
+{
+  "namespace": "com.ltim.subcon.syncsubconorder",
+  "definitions": {
+    "com.ltim.subcon.syncsubconorder.POHeader": {
+      "kind": "entity",
+      "elements": {
+        "PurchaseOrder": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchaseOrderType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CreatedByUser": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "CreationDate": {
+          "type": "cds.Date"
+        },
+        "PurchaseOrderDate": {
+          "type": "cds.Date"
+        },
+        "LastChangeDateTime": {
+          "type": "cds.DateTime"
+        },
+        "ValidityStartDate": {
+          "type": "cds.Date"
+        },
+        "ValidityEndDate": {
+          "type": "cds.Date"
+        },
+        "Language": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "PurchaseOrderDeletionCode": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ReleaseCode": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CompanyCode": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PurchasingOrganization": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PurchasingGroup": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Supplier": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SupplierAddressID": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SupplyingPlant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "InvoicingParty": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PaymentTerms": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CashDiscount1Days": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "CashDiscount2Days": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "NetPaymentDays": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "DocumentCurrency": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "To_PurchaseOrderItem": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "com.ltim.subcon.syncsubconorder.POItem",
+          "on": [
+            {
+              "ref": [
+                "To_PurchaseOrderItem",
+                "PurchaseOrder"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PurchaseOrder"
+              ]
+            }
+          ]
+        },
+        "To_SubconComponents": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "com.ltim.subcon.syncsubconorder.SubconComponents",
+          "on": [
+            {
+              "ref": [
+                "To_SubconComponents",
+                "PurchaseOrder"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PurchaseOrder"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "com.ltim.subcon.syncsubconorder.POItem": {
+      "kind": "entity",
+      "elements": {
+        "PurchaseOrder": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchaseOrderItem": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "DocumentCurrency": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "MaterialGroup": {
+          "type": "cds.String",
+          "length": 9
+        },
+        "Material": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "MaterialType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SupplierMaterialNumber": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "ManufacturerPartNmbr": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Manufacturer": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchaseOrderItemText": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ManualDeliveryAddressID": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceDeliveryAddressID": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Subcontractor": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SupplierIsSubcontractor": {
+          "type": "cds.Boolean"
+        },
+        "StorageLocation": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PurchaseOrderQuantityUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "NetPriceQuantity": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "IsCompletelyDelivered": {
+          "type": "cds.Boolean"
+        },
+        "IsFinallyInvoiced": {
+          "type": "cds.Boolean"
+        },
+        "IsOrderAcknRqd": {
+          "type": "cds.Boolean"
+        },
+        "InvoiceIsGoodsReceiptBased": {
+          "type": "cds.Boolean"
+        },
+        "PurchaseRequisition": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchaseRequisitionItem": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "EvaldRcptSettlmtIsAllowed": {
+          "type": "cds.Boolean"
+        },
+        "RequisitionerName": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "PurchaseOrderItemCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "GoodsReceiptLatestCreationDate": {
+          "type": "cds.Date"
+        },
+        "AccountAssignmentCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "NetAmount": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 0
+        },
+        "GrossAmount": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 0
+        },
+        "OrderQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "NetPriceAmount": {
+          "type": "cds.Decimal",
+          "precision": 11,
+          "scale": 0
+        },
+        "TaxCode": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "TaxJurisdiction": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "ShippingInstruction": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ScheduleLineDeliveryDate": {
+          "type": "cds.Date"
+        },
+        "ShippingDate": {
+          "type": "cds.Date"
+        },
+        "AccountAssignmentObject": {
+          "type": "cds.String"
+        },
+        "AccountAssignmentObject_desc": {
+          "type": "cds.String"
+        },
+        "Status_Item": {
+          "type": "cds.String"
+        },
+        "To_SubconComponents": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "com.ltim.subcon.syncsubconorder.SubconComponents",
+          "on": [
+            {
+              "ref": [
+                "To_SubconComponents",
+                "PurchaseOrder"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PurchaseOrder"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "To_SubconComponents",
+                "PurchaseOrderItem"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PurchaseOrderItem"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "com.ltim.subcon.syncsubconorder.SubconComponents": {
+      "kind": "entity",
+      "elements": {
+        "PurchaseOrder": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchaseOrderItem": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "ScheduleLine": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "ReservationItem": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "RecordType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        },
+        "Material": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "Reservation": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "RequiredQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "TransferredQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "RequirementDate": {
+          "type": "cds.Date"
+        },
+        "RequirementTime": {
+          "type": "cds.Time"
+        },
+        "ReservationIsFinallyIssued": {
+          "type": "cds.Boolean"
+        },
+        "BaseUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "QuantityInEntryUnit": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "EntryUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BillOfMaterialItemNumber": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BOMItemCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "AccountAssignmentCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "InventorySpecialStockType": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "InventorySpecialStockValnType": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "QuantityIsFixed": {
+          "type": "cds.Boolean"
+        },
+        "ComponentScrapInPercent": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "StorageLocation": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProductionSupplyArea": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Batch": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Status_Subcon": {
+          "type": "cds.String"
+        },
+        "To_PurchaseOrderItem": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "com.ltim.subcon.syncsubconorder.POItem",
+          "on": [
+            {
+              "ref": [
+                "To_PurchaseOrderItem",
+                "PurchaseOrder"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PurchaseOrder"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "com.ltim.subcon.syncsubconorder.SubcontractorStoreLoc": {
+      "kind": "entity",
+      "elements": {
+        "Subcontractor": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "StorageLocation": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "isSLocInPlant": {
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "syncsubconprocess": {
+      "@source": "srv/subconprocess-service.cds",
+      "kind": "service",
+      "@impl": "./subconprocess-service.js",
+      "@path": "/subconprocess"
+    },
+    "syncsubconprocess.POItem": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "com.ltim.subcon.syncsubconorder.POItem"
+          ]
+        }
+      },
+      "elements": {
+        "PurchaseOrder": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchaseOrderItem": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "DocumentCurrency": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "MaterialGroup": {
+          "type": "cds.String",
+          "length": 9
+        },
+        "Material": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "MaterialType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SupplierMaterialNumber": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "ManufacturerPartNmbr": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Manufacturer": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchaseOrderItemText": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ManualDeliveryAddressID": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceDeliveryAddressID": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Subcontractor": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SupplierIsSubcontractor": {
+          "type": "cds.Boolean"
+        },
+        "StorageLocation": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PurchaseOrderQuantityUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "NetPriceQuantity": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "IsCompletelyDelivered": {
+          "type": "cds.Boolean"
+        },
+        "IsFinallyInvoiced": {
+          "type": "cds.Boolean"
+        },
+        "IsOrderAcknRqd": {
+          "type": "cds.Boolean"
+        },
+        "InvoiceIsGoodsReceiptBased": {
+          "type": "cds.Boolean"
+        },
+        "PurchaseRequisition": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchaseRequisitionItem": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "EvaldRcptSettlmtIsAllowed": {
+          "type": "cds.Boolean"
+        },
+        "RequisitionerName": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "PurchaseOrderItemCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "GoodsReceiptLatestCreationDate": {
+          "type": "cds.Date"
+        },
+        "AccountAssignmentCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "NetAmount": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 0
+        },
+        "GrossAmount": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 0
+        },
+        "OrderQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "NetPriceAmount": {
+          "type": "cds.Decimal",
+          "precision": 11,
+          "scale": 0
+        },
+        "TaxCode": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "TaxJurisdiction": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "ShippingInstruction": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ScheduleLineDeliveryDate": {
+          "type": "cds.Date"
+        },
+        "ShippingDate": {
+          "type": "cds.Date"
+        },
+        "AccountAssignmentObject": {
+          "type": "cds.String"
+        },
+        "AccountAssignmentObject_desc": {
+          "type": "cds.String"
+        },
+        "Status_Item": {
+          "type": "cds.String"
+        },
+        "To_SubconComponents": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "syncsubconprocess.SubconComponents",
+          "on": [
+            {
+              "ref": [
+                "To_SubconComponents",
+                "PurchaseOrder"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PurchaseOrder"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "To_SubconComponents",
+                "PurchaseOrderItem"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PurchaseOrderItem"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "syncsubconprocess.POHeader": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "com.ltim.subcon.syncsubconorder.POHeader"
+          ]
+        }
+      },
+      "elements": {
+        "PurchaseOrder": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchaseOrderType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CreatedByUser": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "CreationDate": {
+          "type": "cds.Date"
+        },
+        "PurchaseOrderDate": {
+          "type": "cds.Date"
+        },
+        "LastChangeDateTime": {
+          "type": "cds.DateTime"
+        },
+        "ValidityStartDate": {
+          "type": "cds.Date"
+        },
+        "ValidityEndDate": {
+          "type": "cds.Date"
+        },
+        "Language": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "PurchaseOrderDeletionCode": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ReleaseCode": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CompanyCode": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PurchasingOrganization": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PurchasingGroup": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Supplier": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SupplierAddressID": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SupplyingPlant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "InvoicingParty": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PaymentTerms": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CashDiscount1Days": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "CashDiscount2Days": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "NetPaymentDays": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "DocumentCurrency": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "To_PurchaseOrderItem": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "syncsubconprocess.POItem",
+          "on": [
+            {
+              "ref": [
+                "To_PurchaseOrderItem",
+                "PurchaseOrder"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PurchaseOrder"
+              ]
+            }
+          ]
+        },
+        "To_SubconComponents": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "syncsubconprocess.SubconComponents",
+          "on": [
+            {
+              "ref": [
+                "To_SubconComponents",
+                "PurchaseOrder"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PurchaseOrder"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "syncsubconprocess.SubconComponents": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "com.ltim.subcon.syncsubconorder.SubconComponents"
+          ]
+        }
+      },
+      "elements": {
+        "PurchaseOrder": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchaseOrderItem": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "ScheduleLine": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "ReservationItem": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "RecordType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        },
+        "Material": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "Reservation": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "RequiredQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "TransferredQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "RequirementDate": {
+          "type": "cds.Date"
+        },
+        "RequirementTime": {
+          "type": "cds.Time"
+        },
+        "ReservationIsFinallyIssued": {
+          "type": "cds.Boolean"
+        },
+        "BaseUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "QuantityInEntryUnit": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "EntryUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BillOfMaterialItemNumber": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BOMItemCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "AccountAssignmentCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "InventorySpecialStockType": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "InventorySpecialStockValnType": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "QuantityIsFixed": {
+          "type": "cds.Boolean"
+        },
+        "ComponentScrapInPercent": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "StorageLocation": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProductionSupplyArea": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Batch": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Status_Subcon": {
+          "type": "cds.String"
+        },
+        "To_PurchaseOrderItem": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "syncsubconprocess.POItem",
+          "on": [
+            {
+              "ref": [
+                "To_PurchaseOrderItem",
+                "PurchaseOrder"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PurchaseOrder"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "syncsubconprocess.SubcontractorStoreLoc": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "com.ltim.subcon.syncsubconorder.SubcontractorStoreLoc"
+          ]
+        }
+      },
+      "elements": {
+        "Subcontractor": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "StorageLocation": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "isSLocInPlant": {
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "syncsubconprocess.readPurchaseOrderHeader": {
+      "kind": "function",
+      "params": {
+        "purchaseorderid": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "syncsubconprocess.updateStatusAtItem": {
+      "kind": "function",
+      "params": {
+        "PurchaseOrder": {
+          "type": "cds.String"
+        },
+        "PurchaseOrderItem": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v4.9.4",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

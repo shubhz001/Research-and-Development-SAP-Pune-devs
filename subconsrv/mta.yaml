@@ -1,0 +1,94 @@
+_schema-version: '3.1'
+ID: ltimsubcon
+version: 1.0.0
+description: "LTIM subcon project"
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm ci
+        - npx cds build --production
+modules:
+  - name: ltimsubcon-srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      buildpack: nodejs_buildpack
+      readiness-health-check-type: http
+      readiness-health-check-http-endpoint: /health
+      memory: 512M
+      disk-quota: 1024M
+    build-parameters:
+      builder: npm
+    provides:
+      - name: srv-api # required by consumers of CAP services (e.g. approuter)
+        properties:
+          srv-url: ${default-url}
+    requires:
+      - name: ltimsubcon-db
+      - name: ltimsubcon-destination
+      - name: ltimsubcon-uaa
+      - name: ltimsubcon-messaging
+      - name: ltimsubcon-autoscaler
+        parameters:
+          config:
+            instance_min_count: 1
+            instance_max_count: 5
+            scaling_rules:
+              - metric_type: memoryutil
+                threshold: 75
+                operator: '>'
+                adjustment: '+1'
+                breach_duration_secs: 60
+                cool_down_secs: 60
+              - metric_type: memoryutil
+                threshold: 75
+                operator: '<='
+                adjustment: '-1'
+                breach_duration_secs: 60
+                cool_down_secs: 60
+
+  - name: ltimsubcon-db-deployer
+    type: hdb
+    path: gen/db
+    parameters:
+      buildpack: nodejs_buildpack
+      memory: 512M
+      disk-quota: 1024M
+    requires:
+      - name: ltimsubcon-db
+
+resources:
+  - name: ltimsubcon-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+  - name: ltimsubcon-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+  - name: ltimsubcon-uaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: ltimsubcon-${space}
+        tenant-mode: dedicated
+  - name: ltimsubcon-autoscaler
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: autoscaler
+      service-plan: standard
+  - name: ltimsubcon-messaging
+    type: org.cloudfoundry.managed-service
+    parameters:
+      path: ./enterprise-messaging.json
+      service: enterprise-messaging
+      service-plan: default
+

@@ -1,0 +1,47 @@
+{
+  "name": "ltimsubcon",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/generator": "^3.15.0",
+    "@sap-cloud-sdk/odata-v4": "^3.15.0",
+    "@sap/cds": "^7",
+    "@sap/cds-hana": "^2",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/xb-msg-amqp-v100": "^0.9.58",
+    "@sap/xsenv": "^5.1.0",
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "throw-http-errors": "^4.0.1"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/eslint-plugin-cds": "^3",
+    "eslint": "^9"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "db": "hana",
+      "destinations": true,
+      "[hybrid]": {
+        "auth": "dummy"
+      },
+      "messaging": {
+        "kind": "local-messaging",
+        "[production]": {
+          "kind": "enterprise-messaging-shared",
+          "format": "cloudevents",
+          "publishPrefix": "$namespace/ce/",
+          "subscribePrefix": "+/+/+/ce/"
+        }
+      }
+    }
+  }
+}
