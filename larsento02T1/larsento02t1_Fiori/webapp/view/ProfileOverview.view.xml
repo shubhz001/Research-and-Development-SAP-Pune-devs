@@ -1,0 +1,23 @@
+<mvc:View
+    controllerName="larsento02t1.controller.ProfileOverview"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+>
+    <HBox>
+        <Button
+            icon="sap-icon://home"
+            type="Emphasized"
+            press="navtoHP"
+        />
+    </HBox>
+
+    <viz:VizFrame
+        id="chartContainer"
+        vizType="line"
+        width="1353px"
+        height="550px"
+    />
+</mvc:View>

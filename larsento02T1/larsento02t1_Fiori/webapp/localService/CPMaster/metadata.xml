@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="CPMaster" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="CandidatesDetails" EntityType="CPMaster.CandidatesDetails"/>
+                <EntitySet Name="Candidates_Details" EntityType="CPMaster.Candidates_Details"/>
+            </EntityContainer>
+            <EntityType Name="CandidatesDetails">
+                <Key>
+                    <PropertyRef Name="personalId"/>
+                </Key>
+                <Property Name="personalId" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="primaryEmail" Type="Edm.String"/>
+                <Property Name="contactEmail" Type="Edm.String"/>
+                <Property Name="firstName" Type="Edm.String"/>
+                <Property Name="middleName" Type="Edm.String"/>
+                <Property Name="lastName" Type="Edm.String"/>
+                <Property Name="cellPhone" Type="Edm.String"/>
+                <Property Name="homePhone" Type="Edm.String"/>
+                <Property Name="address" Type="Edm.String"/>
+                <Property Name="address2" Type="Edm.String"/>
+                <Property Name="address3" Type="Edm.String"/>
+                <Property Name="address4" Type="Edm.String"/>
+                <Property Name="city" Type="Edm.String"/>
+                <Property Name="country" Type="Edm.String"/>
+                <Property Name="candCountry" Type="Edm.String"/>
+                <Property Name="state" Type="Edm.String"/>
+                <Property Name="zip" Type="Edm.String"/>
+                <Property Name="candCurrentTitle" Type="Edm.String"/>
+                <Property Name="candCurrentCompany" Type="Edm.String"/>
+                <Property Name="formerEmployee" Type="Edm.Boolean"/>
+                <Property Name="candComments" Type="Edm.String"/>
+                <Property Name="resume" Type="Edm.String"/>
+                <Property Name="matching" Type="Collection(CPMaster.CandidatesDetails_matching)" Nullable="true"/>
+            </EntityType>
+            <EntityType Name="Candidates_Details">
+                <Key>
+                    <PropertyRef Name="personalId"/>
+                </Key>
+                <Property Name="personalId" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="primaryEmail" Type="Edm.String"/>
+                <Property Name="contactEmail" Type="Edm.String"/>
+                <Property Name="firstName" Type="Edm.String"/>
+                <Property Name="middleName" Type="Edm.String"/>
+                <Property Name="lastName" Type="Edm.String"/>
+                <Property Name="cellPhone" Type="Edm.String"/>
+                <Property Name="homePhone" Type="Edm.String"/>
+                <Property Name="address" Type="Edm.String"/>
+                <Property Name="address2" Type="Edm.String"/>
+                <Property Name="address3" Type="Edm.String"/>
+                <Property Name="address4" Type="Edm.String"/>
+                <Property Name="city" Type="Edm.String"/>
+                <Property Name="country" Type="Edm.String"/>
+                <Property Name="candCountry" Type="Edm.String"/>
+                <Property Name="state" Type="Edm.String"/>
+                <Property Name="zip" Type="Edm.String"/>
+                <Property Name="candCurrentTitle" Type="Edm.String"/>
+                <Property Name="candCurrentCompany" Type="Edm.String"/>
+                <Property Name="formerEmployee" Type="Edm.Boolean"/>
+                <Property Name="candComments" Type="Edm.String"/>
+                <Property Name="resume" Type="Edm.String"/>
+                <Property Name="matching" Type="Collection(CPMaster.Candidates_Details_matching)" Nullable="true"/>
+            </EntityType>
+            <ComplexType Name="CandidatesDetails_matching">
+                <Property Name="Sid" Type="Edm.Int32"/>
+                <Property Name="matchingPercentage" Type="Edm.Int32"/>
+            </ComplexType>
+            <ComplexType Name="Candidates_Details_matching">
+                <Property Name="Sid" Type="Edm.Int32"/>
+                <Property Name="matchingPercentage" Type="Edm.Int32"/>
+            </ComplexType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

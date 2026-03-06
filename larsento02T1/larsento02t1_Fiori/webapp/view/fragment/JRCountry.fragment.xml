@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="selectDialog13"
+		title="country"
+		items="{path:'SFMainData>/'}"
+		search=".NonValueHelpSearch"
+		confirm=".NonValueHelpClose"
+		cancel=".NonValueHelpClose">
+		<StandardListItem 
+            id="StandardListItem13"
+			title="{SFMainData>country}" />
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,115 @@
+<mvc:View controllerName="larsento02t1.controller.SFData"
+		height="100%"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m"
+		xmlns:f="sap.f"
+		xmlns:a="sap.suite.ui.microchart"
+		xmlns:fb="sap.ui.comp.filterbar"
+		xmlns:svm="sap.ui.comp.smartvariants"
+		xmlns:t="sap.ui.table" >
+		<f:DynamicPage >
+			<f:header>
+				<f:DynamicPageHeader>
+            <f:content>
+			<HBox >
+					<Button icon="sap-icon://home" type="Emphasized"  press="navtoHP"/>
+			</HBox>
+                <fb:FilterBar id="filterbar3" useToolbar="false" search=".onclickC">
+                    <fb:filterGroupItems>
+                        <fb:FilterGroupItem id="subFilter3" name="candidateId" label="Candidate Id" groupName="Group1" visibleInFilterBar="true">
+                            <fb:control>
+                                <Input id="PIdLable4" placeholder="CandidateId" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest"/>
+                            </fb:control>
+                        </fb:FilterGroupItem> 
+                        <fb:FilterGroupItem id="subFilterne" name="firstName" label="First Name" groupName="Group1" visibleInFilterBar="true">
+                            <fb:control>
+                                <Input id="PIdLablene" placeholder="firstName" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest"/>
+                            </fb:control>
+                        </fb:FilterGroupItem> 
+                    </fb:filterGroupItems>
+                </fb:FilterBar>
+				 
+            </f:content>
+        </f:DynamicPageHeader>
+			</f:header>
+			<f:content >
+			<t:Table id="SFTable" 
+			rows="{ path: 'SFCand>/',templateShareable: true, sorter: {path: 'candidateId',descending: false}}"
+			 class="sapUiSmallMarginTop" selectionMode="None" alternateRowColors="true" rowMode="Auto"
+			 cellClick="onNavToDetails" >
+             <t:extension>
+                <OverflowToolbar>
+                    <Title text="Success Factors Data"/>
+                    <ToolbarSpacer />
+                    <Button text="Resfresh Data" press="Onrefresh" tooltip="Refresh The Data" class="sapUiSmallMarginEnd"/>
+                    <Button text="Back to Candidate Profiles" press="onNAVBack" tooltip="To naviagte to Candiadte profiles" class="sapUiSmallMarginEnd"/>
+                    
+                </OverflowToolbar>
+            </t:extension>
+            <t:columns >
+                <t:Column > 
+                    <Label text="Candidate Id" />
+                    <t:template>
+                        <Text text="{SFCand>candidateId}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+                <t:Column >
+                    <Label text="First Name" />
+                    <t:template>
+                        <Text text="{SFCand>firstName}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				<t:Column >
+                    <Label text="Last Name" />
+                    <t:template>
+                        <Text text="{SFCand>lastName}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				<t:Column >
+                    <Label text="Primary Email" />
+                    <t:template>
+                        <Text text="{SFCand>primaryEmail}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				<t:Column >
+                    <Label text="Creation DateTime" />
+                    <t:template>
+                        <Text text="{SFCand>creationDateTime}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+                <t:Column >
+                    <Label text="Current Title" />
+                    <t:template>
+                        <Text text="{SFCand>currentTitle}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				<t:Column >
+                    <Label text="City" />
+                    <t:template>
+                        <Text text="{SFCand>city}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				<t:Column >
+                    <Label text="Country" />
+                    <t:template>
+                        <Text text="{SFCand>country}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				<t:Column >
+                    <Label text="Zip" />
+                    <t:template>
+                        <Text text="{SFCand>zip}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+                <t:Column >
+                    <Label text="Address" />
+                    <t:template>
+                        <Text text="{SFCand>address}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+            </t:columns>
+        </t:Table>
+			</f:content>
+		</f:DynamicPage>
+</mvc:View>

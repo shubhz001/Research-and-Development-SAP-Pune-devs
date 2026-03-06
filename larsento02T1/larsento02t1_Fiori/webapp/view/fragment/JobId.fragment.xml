@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="selectDialogi"
+		title="jobReqId"
+		items="{path:'SFMainData>/'}"
+		search=".onValueHelpSearch"
+		confirm=".onValueHelpClose"
+		cancel=".onValueHelpClose">
+		<StandardListItem 
+            id="StandardListItemi"
+			title="{SFMainData>jobReqId}" />
+	</SelectDialog>
+</core:FragmentDefinition>

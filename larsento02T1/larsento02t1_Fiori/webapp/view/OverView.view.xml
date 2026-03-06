@@ -1,0 +1,199 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:microchart="sap.suite.ui.microchart"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	controllerName="larsento02t1.controller.OverView"
+	xmlns:t="sap.ui.table" 
+	height="100%">
+		
+	<ObjectPageLayout id="ObjectPageLayout"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false" >
+		<headerTitle  >
+		
+			<ObjectPageDynamicHeaderTitle >
+				<actions>
+					<m:Button icon="sap-icon://home" type="Emphasized"  press="navtoHP"/>
+					<m:Button text="Back" type="Emphasized" press="OnNavBack"/>
+					</actions>
+
+				<expandedHeading>
+					<m:Title text="Overview of Candidate" wrapping="true" />
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:HBox>
+						<m:VBox>
+							<m:Avatar src="" class="sapUiSmallMarginEnd" />
+						</m:VBox>
+
+						<m:VBox>
+							<m:Title text="Overview of Candidate" wrapping="true"/>
+							<m:Label design="Bold" text="Candidates Details"/>
+						</m:VBox>
+					</m:HBox>
+				</snappedHeading>
+
+				<expandedContent>
+					<m:Label design="Bold" text="Candidates Details"/>
+				</expandedContent>
+				
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent >
+			<m:FlexBox wrap="Wrap" fitContainer="true" >
+				<m:Avatar src="" class="sapUiMediumMarginEnd sapUiSmallMarginBottom" displaySize="L"/>
+
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom" >
+				<m:Title text="Basic Information" class="sapUiTinyMarginBottom" />
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare" >
+						<m:Label design="Bold" text="First Name:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{UserDOdata>/0/firstName}"/>
+					</m:HBox>
+
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label design="Bold" text="Middle Name:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{UserDOdata>/0/middleName}"/>
+					</m:HBox>
+
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label design="Bold" text="Last Name:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{UserDOdata>/0/lastName}"/>
+					</m:HBox>
+
+					<m:HBox>
+						<m:Label design="Bold" text="Primary Mail:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{UserDOdata>/0/primaryEmail}"/>
+					</m:HBox>
+				</m:VBox>
+
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+					<m:Title text="Contact Information" class="sapUiTinyMarginBottom" />
+
+					<m:HBox class="sapUiTinyMarginBottom">
+						<core:Icon src="sap-icon://account"/>
+						<m:Text text=" {UserDOdata>/0/firstName} {UserDOdata>/0/lastName} "/>
+						<!-- <m:Link text=" John whittaker" class="sapUiSmallMarginBegin"/> -->
+					</m:HBox>
+
+					<m:HBox class="sapUiTinyMarginBottom">
+						<core:Icon src="sap-icon://outgoing-call"/>
+						<m:Text text="{UserDOdata>/0/cellPhone}"/>
+					</m:HBox>
+
+					<m:HBox class="sapUiTinyMarginBottom">
+						<core:Icon src="sap-icon://outgoing-call" />
+						<m:Text text="{UserDOdata>/0/homePhone}"/>
+					</m:HBox>
+
+					<m:HBox>
+						<core:Icon src="sap-icon://email"/>
+						<m:Text text="{UserDOdata>/0/contactEmail}"/>
+					</m:HBox>
+				</m:VBox>
+
+
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+					<m:Title  text="Description" class="sapUiTinyMarginBottom" />
+					<m:Text  width="320px" text="{UserDOdata>/0/candComments}"/>
+				</m:VBox>
+
+			</m:FlexBox>
+		</headerContent>
+
+		<sections>
+			
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="personalSection" title="Address" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="personalSectionSS1" title="Address" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="4">
+								
+
+								<m:Label design="Bold" text="Temporary address" />
+								<m:Text text="{UserDOdata>/0/address}" />
+
+								<m:Label design="Bold" text="Permanent address" />
+								<m:Text text="{UserDOdata>/0/address2}" />
+
+								<m:Label design="Bold" text="City" />
+								<m:Text text="{UserDOdata>/0/city}" />
+
+								<m:Label design="Bold" text="Country" />
+								<m:Text text="{UserDOdata>/0/country}" />
+
+								<m:Label design="Bold" text="Candidate Country" />
+								<m:Text text="{UserDOdata>/0/candCountry}" />
+
+								<m:Label design="Bold" text="State" />
+								<m:Text text="{UserDOdata>/0/state}" />
+
+								<m:Label design="Bold" text="Zip" />
+								<m:Text text="{UserDOdata>/0/zip}" />
+
+								<m:Label design="Bold" text="Education" />
+								<m:Text text="{UserDOdata>/0/education}" />
+
+								<m:Label design="Bold" text="Candidate Current Title" />
+								<m:Text text="{UserDOdata>/0/candCurrentTitle}" />
+
+								<m:Label design="Bold" text="Candidate Current Company" />
+								<m:Text text="{UserDOdata>/0/candCurrentCompany}" />
+
+								<m:Label design="Bold" text="Former Employee" />
+								<m:Text text="{UserDOdata>/0/formerEmployee}" />
+								
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection titleUppercase="false" id="Skills" title="Skills of Candidate"> 
+				<subSections>
+					<ObjectPageSubSection  showTitle="false">
+						<blocks>
+								<core:HTML content="{UserDOdata>/0/Skills}"/>
+								
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection titleUppercase="false" id="Matching" title="Probable Match of Candidate in SF"> 
+				<subSections>
+					<ObjectPageSubSection  showTitle="false">
+						<blocks>
+						<t:Table rows="{path:'TData>/', sorter: {path: 'matchingPercentage',descending: true}}" selectionMode="None" cellClick="onNavToSFD" >
+					   <t:columns >
+					<t:Column hAlign="Center"> 
+                    <m:Label design="Bold" text="SF ID" />
+                    <t:template>
+                        <m:Text text="{TData>/0/Sid}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+                <t:Column hAlign="Center" >
+                    <m:Label design="Bold" text="Matching Percentage"  />
+                    <t:template>
+                        <m:Text text="{TData>/0/matchingPercentage}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				   </t:columns >
+                </t:Table>
+							
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+		</sections>
+	</ObjectPageLayout>
+
+</mvc:View>

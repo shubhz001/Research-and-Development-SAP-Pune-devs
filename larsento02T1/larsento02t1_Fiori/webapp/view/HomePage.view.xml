@@ -1,0 +1,56 @@
+<mvc:View
+	controllerName="larsento02t1.controller.HomePage"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	core:require="{ baseFormatMessage: 'sap/base/strings/formatMessage' }"
+	xmlns:layout="sap.ui.layout"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<Page title="{i18n>title}">
+		<layout:VerticalLayout class="sapUiResponsiveMargin">
+			
+			<layout:HorizontalLayout allowWrapping="true">
+				<GenericTile
+					class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+					header="Candidate Profile Master"
+					press="onNavToCPM">
+					<tileContent>
+						<TileContent>
+							<content>
+								<Text text="Candidate profile validation / Registration"></Text>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<GenericTile
+					class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+					header="SF Job posting Master"
+					press="onNavToSFM">
+					<tileContent>
+						<TileContent>
+							<content>
+								<Text text="Valid as on date"></Text>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<GenericTile
+					id="profileOid"
+					class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+					header="Profile Matchup overview and Application submission Metrics"
+					press="onNavToPo">
+					<tileContent>
+						<TileContent>
+							<content>
+								<!-- <BusyIndicator id="myBusyIndicator" visible="false"/> -->
+								<Text text="Profile Matchup overview and Application submission Metrics"></Text>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				
+			</layout:HorizontalLayout>
+		</layout:VerticalLayout>
+		<!-- <Button id="myButton"  text="Testing" class="sapUiSmallMarginEnd" press="onpress"></Button> -->
+	</Page>
+</mvc:View>

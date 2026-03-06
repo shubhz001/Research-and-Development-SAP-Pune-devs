@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="selectDialogne"
+		title="candidateId"
+		items="{path:'SFCand>/'}"
+		search=".ConValueHelpSearchfn"
+		confirm=".ConValueHelpClosefn"
+		cancel=".ConValueHelpClosefn">
+		<StandardListItem 
+            id="StandardListItemne"
+			title="{SFCand>firstName}" />
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="selectDialog1"
+		title="firstName"
+		items="{path:'cpmaster>/Candidates_Details'}"
+		search=".NonValueHelpSearch"
+		confirm=".NonValueHelpClose"
+		cancel=".NonValueHelpClose">
+		<StandardListItem 
+            id="StandardListItem1"
+			title="{cpmaster>firstName}" />
+	</SelectDialog>
+</core:FragmentDefinition>

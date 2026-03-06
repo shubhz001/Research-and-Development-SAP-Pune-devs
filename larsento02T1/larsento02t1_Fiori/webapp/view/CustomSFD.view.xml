@@ -1,0 +1,187 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	controllerName="larsento02t1.controller.CustomSFD"
+	xmlns:t="sap.ui.table" 
+	height="100%">
+		
+	<ObjectPageLayout id="ObjectPageLayout1"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false" >
+		<headerTitle  >
+		
+			<ObjectPageDynamicHeaderTitle >
+				<actions>
+					<m:Button icon="sap-icon://home" type="Emphasized"  press="navtoHP"/>
+					<m:Button text="Nav Back" type="Emphasized" press="onNavBack"/>
+					</actions>
+
+				<expandedHeading>
+					<m:Title text="Overview of Success Factors Candidate" wrapping="true" />
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:HBox>
+						<m:VBox>
+							<m:Avatar src="" class="sapUiSmallMarginEnd" />
+						</m:VBox>
+
+						<m:VBox>
+							<m:Title text="Overview of Candidate" wrapping="true"/>
+							<m:Label text="Candidates Details"/>
+						</m:VBox>
+					</m:HBox>
+				</snappedHeading>
+
+				<expandedContent>
+					<m:Label text="Candidates Details"/>
+				</expandedContent>
+				
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent >
+			<m:FlexBox wrap="Wrap" fitContainer="true" >
+				
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom" >
+				<m:Title text="Basic Information" class="sapUiTinyMarginBottom" />
+                
+                    <m:HBox class="sapUiTinyMarginBottom" renderType="Bare" >
+						<m:Label text="Candidate Id:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{SFCand>/0/candidateId}"/>
+					</m:HBox>
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare" >
+						<m:Label text="First Name:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{SFCand>/0/firstName}"/>
+					</m:HBox>
+
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label text="Middle Name:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{SFCand>/0/middleName}"/>
+					</m:HBox>
+
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label text="Last Name:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{SFCand>/0/lastName}"/>
+					</m:HBox>
+
+					<m:HBox>
+						<m:Label text="Primary Mail:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{SFCand>/0/primaryEmail}"/>
+					</m:HBox>
+				</m:VBox>
+
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+					<m:Title text="Contact Information" class="sapUiTinyMarginBottom" />
+
+					<m:HBox class="sapUiTinyMarginBottom">
+						<core:Icon src="sap-icon://account"/>
+						<m:Text text=" {SFCand>/0/firstName} {SFCand>/0/lastName} "/>
+					</m:HBox>
+
+					<m:HBox class="sapUiTinyMarginBottom">
+						<core:Icon src="sap-icon://outgoing-call"/>
+						<m:Text text="{SFCand>/0/cellPhone}"/>
+					</m:HBox>
+
+					<m:HBox class="sapUiTinyMarginBottom">
+						<core:Icon src="sap-icon://outgoing-call" />
+						<m:Text text="{SFCand>/0/homePhone}"/>
+					</m:HBox>
+
+					<m:HBox>
+						<core:Icon src="sap-icon://email"/>
+						<m:Text text="{SFCand>/0/contactEmail}"/>
+					</m:HBox>
+				</m:VBox>
+
+
+			</m:FlexBox>
+		</headerContent>
+
+		<sections>
+			
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="personalSection1" title="Address" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="personalSectionSS12" title="Address" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="4">
+								
+                                <!-- <m:Label text="candidate Id" />
+								<m:Link text="{SFCand>/0/candidateId}" /> -->
+
+								<m:Label text="address" />
+								<m:Text text="{SFCand>/0/address}" />
+
+								<m:Label text="City" />
+								<m:Text text="{SFCand>/0/city}" />
+
+								<m:Label text="Country" />
+								<m:Text text="{SFCand>/0/country}" />
+
+								<!-- <m:Label text="CandCountry" />
+								<m:Text text="{SFCand>/0/candCountry}" /> -->
+
+								<!-- <m:Label text="state" />
+								<m:Text text="{SFCand>/0/state}" /> -->
+
+								<m:Label text="Zip" />
+								<m:Text text="{SFCand>/0/zip}" />
+
+								
+								
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>		
+
+
+            <ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="personalSection17" title="Other Details" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="personalSectionSS129" title="Other Details" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="4">
+								
+                                <m:Label text="CandCurrentTitle" />
+								<m:Text text="{SFCand>/0/currentTitle}" />
+
+								<m:Label text="CandCurrentCompany" />
+								<m:Text text="{SFCand>/0/currentCompany}" />
+
+								<m:Label text="partner Member Id" />
+								<m:Text text="{SFCand>/0/partnerMemberId}" />
+
+								<m:Label text="last Login Date Time" />
+								<m:Text text="{SFCand>/0/lastLoginDateTime}" />
+
+								<m:Label text="last Modified Date Time" />
+								<m:Text text="{SFCand>/0/lastModifiedDateTime}" />
+								
+								<m:Label text="external Candidate" />
+								<m:Text text="{SFCand>/0/externalCandidate}" />
+
+								<m:Label text="custTotalExperience" />
+								<m:Text text="{SFCand>/0/custTotalExperience}" />
+
+																
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>		
+				
+		</sections>
+	</ObjectPageLayout>
+
+</mvc:View>

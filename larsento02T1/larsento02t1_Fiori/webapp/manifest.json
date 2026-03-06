@@ -1,0 +1,282 @@
+{
+    "_version": "1.59.0",
+    "sap.app": {
+        "id": "larsento02t1",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.14.4",
+            "toolsId": "8ab379df-82f8-4112-ab51-17158549e671"
+        },
+        "dataSources": {
+            "v2": {
+                "uri": "/odata/v2/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/v2/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "cpmaster": {
+                "uri": "/v2/odata/v4/cpmaster",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/cpmaster/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "CPMaster": {
+                "uri": "/v2/odata/v4/CPMaster",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/CPMaster/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.127.1",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "larsento02t1.i18n.i18n"
+                }
+            },
+            "v2": {
+                "dataSource": "v2",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
+            },
+            "cpmaster": {
+                "dataSource": "cpmaster",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
+            },
+            "CPMaster": {
+                "dataSource": "CPMaster",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "larsento02t1.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteHomePage",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetHomePage"
+                    ]
+                },
+                {
+                    "name": "OverView",
+                    "pattern": "OverView/{CustomerID}",
+                    "target": [
+                        "OverView"
+                    ]
+                },
+                {
+                    "name": "CandidatePM",
+                    "pattern": "CandidatePM",
+                    "target": [
+                        "Candidate"
+                    ]
+                },
+                {
+                    "name": "SFMaster",
+                    "pattern": "SFMaster/{CustomerID}",
+                    "target": [
+                        "SFMaster"
+                    ]
+                },
+                {
+                    "name": "SFMDetails",
+                    "pattern": "SFMDetails/{CustomerID}",
+                    "target": [
+                        "SFMDetails"
+                    ]
+                },
+                {
+                    "name": "SFMain",
+                    "pattern": "SFMain",
+                    "target": [
+                        "SFMain"
+                    ]
+                },
+                {
+                    "name": "SFData",
+                    "pattern": "SFData",
+                    "target": [
+                        "SFData"
+                    ]
+                },
+                {
+                    "name": "ProfileOverview",
+                    "pattern": "ProfileOverview",
+                    "target": [
+                        "ProfileOverview"
+                    ]
+                },
+                {
+                    "name": "CustomSFD",
+                    "pattern": "CustomSFD/{CustomerID}",
+                    "target": [
+                        "CustomSFD"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetHomePage": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "HomePage",
+                    "viewName": "HomePage"
+                },
+                "OverView": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "OverView",
+                    "viewName": "OverView"
+                },
+                "Candidate": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "CandidatePM",
+                    "viewName": "CandidatePM"
+                },
+                "SFMaster": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "SFMaster",
+                    "viewName": "SFMaster"
+                },
+                "ProfileOverview": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "ProfileOverview",
+                    "viewName": "ProfileOverview"
+                },
+                "SFMDetails": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "SFMDetails",
+                    "viewName": "SFMDetails"
+                },
+                "SFMain": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "SFMain",
+                    "viewName": "SFMain"
+                },
+                "SFData": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "SFData",
+                    "viewName": "SFData"
+                },
+                "CustomSFD": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "CustomSFD",
+                    "viewName": "CustomSFD"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "larsento02t1.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    }
+}

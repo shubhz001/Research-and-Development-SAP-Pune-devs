@@ -1,0 +1,92 @@
+<mvc:View controllerName="larsento02t1.controller.SFMain"
+		height="100%"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m"
+		xmlns:f="sap.f"
+		xmlns:a="sap.suite.ui.microchart"
+		xmlns:fb="sap.ui.comp.filterbar"
+		xmlns:svm="sap.ui.comp.smartvariants"
+		xmlns:t="sap.ui.table" >
+		<f:DynamicPage >
+			<f:header>
+				
+				<f:DynamicPageHeader>
+            <f:content>
+			<HBox >
+					<Button icon="sap-icon://home" type="Emphasized"  press="navtoHP"/>
+					</HBox>
+                <fb:FilterBar id="filterbarSFMain" useToolbar="false" search=".onclick">
+                    <fb:filterGroupItems>
+                        <fb:FilterGroupItem id="subFilterSFMain" name="jobReqId" label="JobRequisition Id" groupName="Group1" visibleInFilterBar="true">
+                            <fb:control>
+                                <Input id="PIdLableSFMain" placeholder="JobRequisition Id" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest"/>
+                            </fb:control>
+                        </fb:FilterGroupItem> 
+						<fb:FilterGroupItem id="subFilter31SFMain" name="country" label="Country" groupName="Group1" visibleInFilterBar="true">
+                            <fb:control>
+                                <Input id="PIdLable31SFMain" placeholder="Country" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequestC"/>
+                            </fb:control>
+                        </fb:FilterGroupItem> 
+                    </fb:filterGroupItems>
+					
+                </fb:FilterBar>
+				 
+            </f:content>
+        </f:DynamicPageHeader>
+			</f:header>
+			<f:content >
+			<t:Table id="TablenewSF" 
+         rows="{path: 'SFMainData>/', templateShareable: true, sorter: [{path: 'lastModifiedByNav/title', descending: false}]}"
+         class="sapUiSmallMarginTop" 
+         selectionMode="None" 
+         cellClick="onNavToDetails">
+    <t:extension>
+        <OverflowToolbar>
+            <Title text="SF Job posting Master"/>
+            <ToolbarSpacer />
+        </OverflowToolbar>
+    </t:extension>
+    <t:columns>
+        <t:Column>
+            <Label design="Bold" text="JobRequisition Id" />
+            <t:template>
+                <Text text="{SFMainData>jobReqId}" wrapping="false"/>
+            </t:template>
+        </t:Column>
+        <t:Column>
+            <Label design="Bold" text="External / Internal Business Title" />
+            <t:template>
+                <Text text="{SFMainData>jobReqLocale/results/0/jobTitle}" wrapping="false"/>
+            </t:template>
+        </t:Column>
+        <t:Column>
+            <Label design="Bold" text="Country" />
+            <t:template>
+                <Text text="{SFMainData>country}" wrapping="false"/>
+            </t:template>
+        </t:Column>
+        <t:Column>
+            <Label design="Bold" text="Post End Date" />
+            <t:template> 
+                <Text text="{path: 'SFMainData>jobReqPostings/results/0/postEndDate', formatter: '.Formatter.formatDate'}" wrapping="false"/>
+            </t:template>
+        </t:Column>
+    </t:columns>
+</t:Table>
+
+			</f:content>
+		</f:DynamicPage>
+</mvc:View>
+
+								
+								
+								
+								
+								
+								
+								
+						
+								
+								<!-- <core:HTML content=""></core:HTML>							 -->
+							

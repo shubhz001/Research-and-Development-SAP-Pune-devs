@@ -1,0 +1,189 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:f="sap.f"
+	xmlns:m="sap.m"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:cards="sap.f.cards"
+	controllerName="larsento02t1.controller.SFMDetails"
+	xmlns:t="sap.ui.table" 
+	height="100%">
+		
+	<ObjectPageLayout id="ObjectPageLayoutSFM"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false" >
+		<headerTitle  >
+		
+			<ObjectPageDynamicHeaderTitle >
+				<actions>
+					<m:Button icon="sap-icon://home" type="Emphasized"  press="navtoHP"/>
+					<m:Button text="Back" type="Emphasized" press="OnNavBack"/>
+					<m:Button id="generate" text="Search for Matching Candidate" type="Emphasized" visible="true" press="MatchCandi"/>
+					<!-- <m:Button id="Regis" text="Register Matching Candidate" type="Emphasized" press="Register" visible="false" /> -->
+					</actions>
+
+				<expandedHeading>
+					<m:Title text="Overview of JOB" wrapping="true" />
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:HBox>
+						<m:VBox>
+							<m:Title text="Overview of JOB" wrapping="true"/>
+							<m:Label design="Bold" text="Job Req ID:{FilterData>/0/jobReqId}"/>
+						</m:VBox>
+					</m:HBox>
+				</snappedHeading>
+
+				<expandedContent>
+					<m:Label design="Bold" text="Job Req ID:{FilterData>/0/jobReqId}"/>
+				</expandedContent>
+				
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<sections>
+			
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="personalSectionSFM" title="JOB Post Information" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="personalSectionSFMSub" title="JOB Post Information" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="3"
+											  columnsL="4"
+											  columnsXL="5">
+								
+
+								<m:Label design="Bold" text="Job Req ID"  />
+								<m:Text text="{FilterData>/0/jobReqId}"/>
+
+								<m:Label design="Bold" text="TemplateID" />
+								<m:Text text="{FilterData>/0/templateId}"/>
+
+								<m:Label design="Bold" text="Locale" />
+								<m:Text text="{FilterData>/0/jobReqLocale/results/0/locale/}"/>
+
+								<m:Label design="Bold" text="TemplateType" />
+								<m:Text text="{FilterData>/0/templateType}"/>
+
+								<m:Label design="Bold" text="DateCreated" />
+								<m:Text text="{FilterData>/0/createdDateTime}"/>
+
+								<m:Label design="Bold" text="LastModified" />
+								<m:Text text="{FilterData>/0/lastModifiedDateTime}"/>
+
+								<m:Label design="Bold" text="ApprovedDate" />
+								<m:Text text="{FilterData>/0/jobStartDate}"/>
+
+								<m:Label design="Bold" text="Closed Date" />
+								<m:Text text="{FilterData>/0/closedDateTime}"/>
+
+								<m:Label design="Bold" text="Due Date" />
+								<m:Text text="{FilterData>/0/formDueDate}"/>
+
+								<m:Label design="Bold" text="Posting Start" />
+								<m:Text text="{path:'FilterData>/0/jobReqPostings/results/0/postStartDate',formatter: '.Formatter.formatDate'}" />
+
+								<m:Label design="Bold" text="Posting End Date" />
+								<m:Text text="{path:'FilterData>/0/jobReqPostings/results/0/postEndDate',formatter: '.Formatter.formatDate'}" />
+
+								<m:Label design="Bold" text="Req State" />
+								<m:Text text="{FilterData>/0/internalStatus}" />
+
+								<m:Label design="Bold" text="Originator" />
+								<m:Text  width="320px" text="{FilterData>/0/originator/results/0/usersSysId}"/>
+
+								<m:Label design="Bold" text="Number of Positions" />
+								<m:Link text="{FilterData>/0/numberOpenings}" />
+
+								<m:Label design="Bold" text="RecruitingStatus" />
+								<m:Text text="{FilterData>/0/status/results/0/status}" />
+
+								<m:Label design="Bold" text="Internal Business Title" />
+								<m:Text text="{FilterData>/0/jobReqLocale/results/0/jobTitle}" />
+								
+								<m:Label design="Bold" text="External Business Title" />
+								<m:Text text="{FilterData>/0/jobReqLocale/results/0/externalTitle}" />
+													
+								<m:Label design="Bold" text="Template ID" />
+								<m:Text text="{FilterData>/0/templateId}" />
+								
+								<m:Label design="Bold" text="Employee Class" />
+								<m:Text text="{FilterData>/0/lastModifiedByNav/results/0/employeeClass}" />
+
+								<m:Label design="Bold" text="Currency" />
+								<m:Text text="{FilterData>/0/currency}" />
+
+								<m:Label design="Bold" text="Maximum Budgeted Salary" />
+								<m:Text text="{FilterData>/0/salaryMax}" />
+
+								<m:Label design="Bold" text="Country Determining Application Questions" />
+								<m:Text text="{FilterData>/0/country}" />
+
+								<m:Label design="Bold" text="Hiring Manager" />
+								<m:Text text="{FilterData>/0/hiringManager/firstName} {FilterData>/0/hiringManager/lastName}" />
+
+								<m:Label design="Bold" text="Internal Posting" />
+								<m:Text text="{FilterData>/0/intranetPosting}" />
+
+								<m:Label design="Bold" text="External Posting" />
+								<m:Text text="{FilterData>/0/corporatePosting}" />
+
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="personalSectionSFM00" title="Job Description" importance="Medium" >
+				<subSections>
+					<ObjectPageSubSection id="personalSectionSFMSub49" title="Job Description" titleUppercase="false">
+						<blocks>
+								<core:HTML content="{FilterData>/0/jobReqLocale/results/0/jobDescription}"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+		
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="personalSectionSFM4" title="Candidate profiles match with Job" importance="Medium" visible="false">
+				<subSections>
+					<ObjectPageSubSection id="personalSectionSFMSub4" showTitle="true" title="Candidate profiles match with Job" titleUppercase="false">
+						<blocks>
+						             <m:VBox>
+								<core:HTML content="{Matching>/overview}"/>
+								<m:Label design="Bold" text="Best Matching Candidate:" />
+								<m:Text text="{Matching>/bestMatchingCandidate/BestName}"/>
+								              
+                                <m:List id="candidateList" items="{Matching>/matches}">
+                                    <m:items>
+                                        <m:CustomListItem>
+										
+                                            <m:VBox>
+                                                <f:Card width="55%" height="auto">
+												<f:header>
+                                                        <cards:Header title=""/>
+                                                    </f:header>
+                                                    <f:content>
+                                                        <m:VBox>
+                                                            <m:FormattedText htmlText="{Matching>matchOverview}" />
+															<m:Text text="{Matching>personalId}" visible="false"></m:Text>
+                                                            <m:Button id="Regis" text="Register Candidate" type="Emphasized" press="Register" visible="true" />
+															<m:Text text=""></m:Text>
+                                                        </m:VBox>
+                                                    </f:content>
+                                                </f:Card>
+                                            </m:VBox>
+                                        </m:CustomListItem>
+                                    </m:items>
+                                </m:List>
+                            </m:VBox> 
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+		</sections>
+	</ObjectPageLayout>
+
+</mvc:View>

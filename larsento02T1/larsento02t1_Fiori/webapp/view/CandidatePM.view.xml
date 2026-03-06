@@ -1,0 +1,95 @@
+<mvc:View controllerName="larsento02t1.controller.CandidatePM"
+		height="100%"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m"
+		xmlns:f="sap.f"
+		xmlns:a="sap.suite.ui.microchart"
+		xmlns:fb="sap.ui.comp.filterbar"
+		xmlns:svm="sap.ui.comp.smartvariants"
+		xmlns:t="sap.ui.table" >
+		<f:DynamicPage >
+			<f:header>
+				
+				<f:DynamicPageHeader>
+            <f:content>
+			<HBox >
+					<Button icon="sap-icon://home" type="Emphasized"  press="navtoHP"/>
+					</HBox>
+                <fb:FilterBar id="filterbar1" useToolbar="false" search=".onclick">
+                    <fb:filterGroupItems>
+                        <fb:FilterGroupItem id="subFilter" name="personalId" label="Personal Id" groupName="Group1" visibleInFilterBar="true">
+                            <fb:control>
+                                <Input id="PIdLable" placeholder="personalId" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest"/>
+                            </fb:control>
+                        </fb:FilterGroupItem> 
+						<fb:FilterGroupItem id="subFilter31" name="firstName" label="First Name" groupName="Group1" visibleInFilterBar="true">
+                            <fb:control>
+                                <Input id="PIdLable31" placeholder="firstName" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest"/>
+                            </fb:control>
+                        </fb:FilterGroupItem> 
+                    </fb:filterGroupItems>
+					
+                </fb:FilterBar>
+				 
+            </f:content>
+        </f:DynamicPageHeader>
+			</f:header>
+			<f:content >
+			<t:Table id="Table" 
+			rows="{ path:'CPMoData>/',sorter: { path: 'personalId', descending: false, comparator: '.comparePersonalId' },templateShareable: true}"
+			 class="sapUiSmallMarginTop" selectionMode="None" 
+			 cellClick="onNavToDetails">
+			   <t:extension>
+                <OverflowToolbar>
+                    <Title text="Candidate Profile Master"/>
+                    <ToolbarSpacer />
+                    <Button id="Button2" text="Refresh Data" press="RefreshAll" tooltip="Refresh Data" class="sapUiSmallMarginEnd"/>
+					<Button id="Button1" text="Add new unsolicited Data" press="AddAi" tooltip="Add new Data" class="sapUiSmallMarginEnd"/>
+                    <Button id="Button" text="Check SF DATA" press="onCheck" tooltip="To view the success factor data" class="sapUiSmallMarginEnd"/>
+                    
+                </OverflowToolbar>
+            </t:extension>
+            <t:columns >
+                <t:Column > 
+                    <Label design="Bold" text="Candidate Temporary ID" />
+                    <t:template>
+                        <Text text="{CPMoData>personalId}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+                <t:Column >
+                    <Label design="Bold" text="First Name" />
+                    <t:template>
+                        <Text text="{CPMoData>firstName}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				<t:Column >
+                    <Label design="Bold" text="Last Name" />
+                    <t:template>
+                        <Text text="{CPMoData>lastName}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				<t:Column >
+                    <Label design="Bold" text="Primary Email" />
+                    <t:template>
+                        <Text text="{CPMoData>primaryEmail}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				<t:Column >
+                    <Label design="Bold" text="Current Title" />
+                    <t:template>
+                        <Text text="{CPMoData>candCurrentTitle}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+				<t:Column > 
+                    <Label design="Bold" text="Candidate Added Date" />
+                    <t:template>
+                        <Text text="{CPMoData>CreatedDate}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+                
+            </t:columns>
+        </t:Table>
+			</f:content>
+		</f:DynamicPage>
+</mvc:View>
