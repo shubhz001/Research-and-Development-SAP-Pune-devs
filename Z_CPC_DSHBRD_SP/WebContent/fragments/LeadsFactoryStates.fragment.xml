@@ -1,0 +1,87 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:vbm="sap.ui.vbm" xmlns:vk="sap.ui.vk" class="sapUiSizeCompact">
+	<Toolbar style="Clear">
+		<Title text="Leads Count" class="titleSizeClass" />
+	</Toolbar>
+	<Panel height="18rem" class="panelclassGeoMapUS">
+		<vk:MapContainer autoAdjustHeight="false" showRectangularZoom="false" showFullScreen="false" showNavbar="false" showSettings="false" showMapLayer="false">
+			<vk:content>
+				<vk:ContainerContent icon="US Mainland" title="US Mainland">
+					<vk:content>
+						<vbm:AnalyticMap id="vbi"
+							regions="{SelectionParameterModel>/LeadsFactoryStates}"
+							width="100%" height="50%" initialZoom="3.5"
+							initialPosition="-92.446;34;0" disablePan="true" disableZoom="true" legendVisible="false" regionDeselect="handleDeselect">
+							<vbm:regions>
+								<vbm:Region code="{SelectionParameterModel>States}"
+									color="{SelectionParameterModel>color}"
+									tooltip="{SelectionParameterModel>States} :
+									{SelectionParameterModel>CallCount}">
+								</vbm:Region>
+							</vbm:regions>
+						</vbm:AnalyticMap> 
+					</vk:content>
+				</vk:ContainerContent>
+			</vk:content>
+		</vk:MapContainer>
+	</Panel>
+	<HBox class="classGeoMapAKHI">
+		<Panel height="11rem" width="11rem" class="panelclassGeoMapAKHI">
+			<vk:MapContainer autoAdjustHeight="false" showRectangularZoom="false" showFullScreen="false" showNavbar="false" showSettings="false" showMapLayer="false">
+				<vk:content>
+					<vk:ContainerContent title="Alaska">
+						<vk:content>
+							<vbm:AnalyticMap id="vbiAK"
+								regions="{SelectionParameterModel>/LeadsFactoryStates}"
+								width="100%" height="50%" initialZoom="1"
+								initialPosition="-187;47;0" disablePan="true" disableZoom="true" regionDeselect="handleDeselect">
+								<vbm:regions>
+									<vbm:Region code="{SelectionParameterModel>States}"
+										color="{SelectionParameterModel>color}"
+										tooltip="{SelectionParameterModel>States} :
+										{SelectionParameterModel>CallCount}">
+									</vbm:Region>
+								</vbm:regions>
+							</vbm:AnalyticMap> 
+						</vk:content>
+					</vk:ContainerContent>
+				</vk:content>
+			</vk:MapContainer>
+		</Panel>
+		<Panel height="11rem" width="10rem" class="panelclassGeoMapAKHI">
+			<vk:MapContainer autoAdjustHeight="false" showRectangularZoom="false" showFullScreen="false" showNavbar="false" showSettings="false" showMapLayer="false">
+				<vk:content>
+					<vk:ContainerContent title="Alaska">
+						<vk:content>
+							<vbm:AnalyticMap id="vbiHI"
+								regions="{SelectionParameterModel>/LeadsFactoryStates}"
+								width="100%" height="50%" initialZoom="4"
+								initialPosition="-157.99;16;0" disablePan="true" disableZoom="true" regionDeselect="handleDeselect">
+								<vbm:regions>
+									<vbm:Region code="{SelectionParameterModel>States}"
+										color="{SelectionParameterModel>color}"
+										tooltip="{SelectionParameterModel>States} :
+										{SelectionParameterModel>CallCount}">
+									</vbm:Region>
+								</vbm:regions>
+							</vbm:AnalyticMap> 
+						</vk:content>
+					</vk:ContainerContent>
+				</vk:content>
+			</vk:MapContainer>
+		</Panel>
+	</HBox>
+	<Toolbar style="Clear" height="2%">
+		<ToolbarSpacer />
+	</Toolbar>
+	<Toolbar style="Clear" height="4%">
+		<ObjectStatus id="legend1" class="classLegend1"
+			text="" icon="sap-icon://color-fill" />
+		<ObjectStatus id="legend2" class="classLegend2"
+			text="" icon="sap-icon://color-fill" />
+		<ObjectStatus id="legend3" class="classLegend3"
+			text="" icon="sap-icon://color-fill" />
+		<ObjectStatus id="legend4" class="classLegend4"
+			text="" icon="sap-icon://color-fill" />
+		<ToolbarSpacer width="50%" />
+	</Toolbar>
+</core:FragmentDefinition>

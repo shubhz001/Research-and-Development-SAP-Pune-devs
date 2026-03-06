@@ -1,0 +1,127 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Call Tracking Detail"  stretch="true" class="sapUiSizeCompact">
+		
+		<Table id="idHyperlinkLeadsProvided" width="250%" inset="false" items="{ path: 'SelectionParameterModel>/HyperlinkLeadsProvided/0' }">
+			<headerToolbar>
+			
+				<OverflowToolbar >
+				<ToolbarSpacer/>
+				<Button type="Ghost" text="" icon="sap-icon://download" press="handleHyperlinkLeadsProvidedExport"/>
+			
+			</OverflowToolbar>
+				
+			</headerToolbar>
+			<columns>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Distributor"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Distributor Id"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Dealer HVP"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Dealer"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Brand"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Ad Source"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Campaign Name"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Tracking No."/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Dealer No."/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="FAD"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="High Intent Outcome"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Name"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Call DNA Class"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Call Result Group"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Caller"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Caller Name"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Call Time"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Caller City"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Caller State"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Caller Postal Code"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Reason for call"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="URL"/>
+				</Column>
+				
+			</columns>
+			<items>
+			
+					<ColumnListItem vAlign="Middle">
+							<cells>
+								
+								
+								<Text text="{SelectionParameterModel>A2HTKA9JO3X1AD5YCWS9TG4VK2R9}"/>
+								<Text text="{SelectionParameterModel>A2HJYZCSY1RGUT52657O9VEUQ58M}"/>
+								<Text text="{SelectionParameterModel>A2HJKP1ZPYURAJGIGQK4683UUHCJ}"/>
+								<Text text="{SelectionParameterModel>A2HIH681RAML9MOTJFW2H2UYPEGD}"/>
+								<Text text="{SelectionParameterModel>A2HR4VQBEZ14ZT3BS0DRMWK48IGM}"/>
+								<Text text="{SelectionParameterModel>A2HIKD99NIS4RJOMEYGXRL22LNA9}"/>
+								<Text text="{SelectionParameterModel>A2HK8BO2EMCI2PHJXGV3LGFE77WP}"/>
+								<Text text="{SelectionParameterModel>A2HTI2UO2D2502C1RERRMQUS9AFU}"/>
+								<Text text="{SelectionParameterModel>A2HI8OJLEARYTE4LPT9VA6108B4C}"/>
+								<Text text="{SelectionParameterModel>A2HK9VSSWZWEWVZ016E0XZYOHT7A}"/>
+								<Text text="{SelectionParameterModel>A2HNBUY07Q62XBQ3HGQJ1W7JJA7S}"/>
+								<Text text="{SelectionParameterModel>A2HR8QH4FRAIHHTI4QTABXT95A1J}"/>
+								<Text text="{SelectionParameterModel>A2HNC7YPSAZJKWV8BA0W2V95DQKX}"/>
+								<Text text="{SelectionParameterModel>A2HSRUX3KDN8G5H4LK99O2U0AW0B}"/>
+								<Text text="{SelectionParameterModel>A2HPQYO0UQFUHJCYI9BJA3Q3NFME}"/>
+								<Text text="{SelectionParameterModel>A2HO81PFA7NUH5VRBUS8517L8LNE}"/>
+								<Text text="{SelectionParameterModel>A2HGFFU461J8FANI1YFJYIBE395B_T} {SelectionParameterModel>A2HRDPSMU5H1BWJBB0K4LY00ID0H}"/>
+								<!-- <Text text="{SelectionParameterModel>A2HGFFU461J8FANI1YFJYIBE395B_T}"/>
+								<Text text="{SelectionParameterModel>A2HRDPSMU5H1BWJBB0K4LY00ID0H}"/> -->
+								<Text text="{SelectionParameterModel>A2HFPFY1RGW101W4M5I9AUFR549R}"/>
+								<Text text="{SelectionParameterModel>A2HK6ZV2TZK3GKNV413GA3G68B4K}"/>
+								<Text text="{SelectionParameterModel>A2HS3OUQPKWVSUARZ229OLNCUEPL}"/>
+								<Text text="{SelectionParameterModel>A2HQ39EH7KONQOFLJVFZBOA5UPQ5}"/>
+								<Text text="{SelectionParameterModel>A2HIKKG8DXF2FL0J8TBLXBXC30TE}"/>
+								
+								
+								
+							</cells>
+						</ColumnListItem>
+			</items>
+		</Table>
+		<buttons>
+		
+		<Button text="Cancel" type="Emphasized" press="handleLeadsProvidedHyperlinkClose"/>	
+		</buttons>
+		
+	</Dialog>
+	
+</core:FragmentDefinition>

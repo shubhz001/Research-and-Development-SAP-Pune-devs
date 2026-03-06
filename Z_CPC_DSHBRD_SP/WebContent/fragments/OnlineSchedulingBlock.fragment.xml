@@ -1,0 +1,107 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" class="sapUiSizeCompact">
+	<core:Fragment fragmentName="cpc.CPC_Dashboard_Split.fragments.OnlineScheduling" type="XML" />
+	<l:HorizontalLayout
+		class="callsOnlineSchedulinglayoutWidthClass">
+		<l:VerticalLayout>
+			<l:HorizontalLayout>
+				<Image src="Image/accepted.PNG" height="2rem" />
+				<Title id="acceptedLeads" text=""
+					class="callsOnlineScheulingTitleClass" />
+			</l:HorizontalLayout>
+			<Title text="Accepted" class="callsTitleClass sapUiTinyMarginBegin" />
+		</l:VerticalLayout>
+	</l:HorizontalLayout>
+	<l:HorizontalLayout
+		class="callsOnlineSchedulinglayoutWidthClass">
+		<l:VerticalLayout>
+			<l:HorizontalLayout>
+				<Image src="Image/offered.PNG" height="2rem" />
+				<Title id="offeredLeads" text=""
+					class="callsOnlineScheulingTitleClass" />
+			</l:HorizontalLayout>
+			<Title text="Offered" class="callsTitleClass" />
+		</l:VerticalLayout>
+	</l:HorizontalLayout>
+	<l:HorizontalLayout
+		class="callsOnlineSchedulinglayoutWidthClass">
+		<l:VerticalLayout>
+			<l:HorizontalLayout>
+				<Image src="Image/rejected.PNG" height="2rem" />
+				<Title id="rejectedLeads" text=""
+					class="callsOnlineScheulingTitleClass" />
+			</l:HorizontalLayout>
+			<Title text="Rejected" class="callsTitleClass" />
+			<l:VerticalLayout id="reasonArea">
+			</l:VerticalLayout> 
+		</l:VerticalLayout>
+	</l:HorizontalLayout>
+	<l:VerticalLayout class="sapUiSmallMarginTop">
+		<Image src="Image/DownArrowNew.PNG" height="3rem"
+			class="sapUiContentPadding sapUiSmallMarginBegin" />
+		<l:HorizontalLayout>
+			<l:VerticalLayout class="sapUiContentPadding">
+				<Label text="{i18n>leadsUnscheduleTxt}" class="leadsClass" />
+				<Label text="{i18n>leadsScheduleTxt} " class="leadsClass" />
+				<Label text="{i18n>leadsInProgressTxt}" class="leadsClass" />
+				<Label text="{i18n>leadsCancelTxt}" class="leadsClass" />
+				<Label text="{i18n>leadsCompleteTxt}" class="leadsClass" />
+			</l:VerticalLayout>
+			<l:VerticalLayout class="sapUiContentPadding">
+				<l:HorizontalLayout>
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/LeadsUnscheduledPer}"
+						class="sapUiSmallMarginBegin" state="Error"
+						displayOnly="true" width="140%" />
+					<Label text="{SelectionParameterModel>/LeadsUnscheduled}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+				<l:HorizontalLayout>
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/LeadsScheduledPer}"
+						class="sapUiSmallMarginBegin" state="None"
+						displayOnly="true" width="140%" />
+					<Label text="{SelectionParameterModel>/LeadsScheduled}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+				<l:HorizontalLayout>
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/LeadsInProgPer}"
+						class="sapUiSmallMarginBegin" state="Warning"
+						displayOnly="true" width="140%" />
+					<Label text="{SelectionParameterModel>/LeadsInProg}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+				<l:HorizontalLayout>
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/LeadsCancelledPer}"
+						class="sapUiSmallMarginBegin" state="Success"
+						displayOnly="true" width="140%" />
+					<Label text="{SelectionParameterModel>/LeadsCancelled}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+				<l:HorizontalLayout>
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/LeadsCompletedPer}"
+						class="sapUiSmallMarginBegin" state="Information"
+						displayOnly="true" width="140%" />
+					<Label text="{SelectionParameterModel>/LeadsCompleted}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+			</l:VerticalLayout>
+			
+			<l:VerticalLayout>
+				<l:VerticalLayout class="sapUiLargeMarginBegin">
+					<Image src="Image/Clock.PNG" height="3rem" class="clockIcon" />
+					<Text wrapping="true" width="40%" class="leadsNumberClassAverageCompleted"
+						text="On Average, your Dealers Accepted leads within {SelectionParameterModel>/AverageAcceptedHours} hours" />
+				</l:VerticalLayout>
+				<l:VerticalLayout class="sapUiLargeMarginBegin">
+					<Image src="Image/Clock.PNG" height="3rem" class="clockIcon  sapUiSmallMarginTop" />
+					<Text wrapping="true" width="42%" class="leadsNumberClassAverageCompleted"
+						text="On Average, your Dealers Completed leads within {SelectionParameterModel>/AverageCompletedHours} hours" />
+				</l:VerticalLayout> 
+			</l:VerticalLayout>
+			
+		</l:HorizontalLayout>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

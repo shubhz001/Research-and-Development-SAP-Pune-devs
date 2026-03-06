@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" class="sapUiSizeCompact">
+	  <TableSelectDialog  items="{
+			path : '/Distributor', 
+			sorter : {
+				path : 'DistributorText',
+				descending : false
+			}
+		}" confirm="handleDistributorValueHelpConfirm" noDataText="No Data" liveChange="handleDistributorsLiveSearch" title="Distributor" search="handleDistributorsLiveSearch"
+		 cancel="handleCloseDistributorValueHelp" multiSelect="true" rememberSelections="true">
+		
+		<ColumnListItem>
+			<cells>
+				<Text text="{DistributorText}" />
+				<Text text="{DistributorKey}" />
+			</cells>
+		</ColumnListItem>
+		
+		<columns>
+			<Column  hAlign="Center" class="columnTitleClass">
+				<header>
+					<Text text="Distributor"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" hAlign="Center" demandPopin="true"  class="columnTitleClass">
+				<header>
+					<Text text="Distributor Key"/>
+				</header>
+			</Column>
+			
+		</columns>
+	</TableSelectDialog> 
+</core:FragmentDefinition>

@@ -1,0 +1,59 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:chart="sap.suite.ui.commons" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:chartContainer="sap.suite.ui.commons">
+	<l:VerticalLayout class="sapUiContentPadding" width="100%">
+		<l:content>
+		
+				<HBox alignItems="Begin" class=".sapUiVlt.sapUiContentPadding">
+					<Link text="View Report Detail" class="sapUiSmallMarginEnd .sapMLnk" press="handleLeadsProvidedPress"/>
+					<Label text="|" class="sapUiSmallMarginEnd"/>
+					<Link text=" Call Recording" class="sapUiSmallMarginEnd" press="handleLinkObjectAttributePress"/>
+				<!--	<Link text=" Call Recording" class="sapUiSmallMarginEnd .sapMLnk"
+						href="https://www.apps1.hvacpartners.com/SeamlessSignOn/SeamlessSignOn/?programCode=CallTracking"/>-->
+				</HBox>
+		
+			<!--	<Link text="Open SAP Homepage" target="_blank" href="http://www.sap.com"/>-->
+		</l:content>
+	</l:VerticalLayout>
+	<FlexBox height="20px" alignItems="Start" justifyContent="Start"
+		class="sapUiMediumMarginTop">
+		<items>
+			<l:VerticalLayout>
+				<Label id="trackingLeadsBigText" text="" class="trackingLeadsNoCLass" />
+				<Text text="Tracking Leads" class="trackingLeadstextCLass" />
+			</l:VerticalLayout>
+		</items>
+	</FlexBox>
+	<viz:VizFrame id="idVizFrameLeadsProvided" uiConfig="{applicationSet:'fiori'}" vizType="stacked_column" width="100%" height="250px">
+		<viz:dataset>
+			<viz.data:FlattenedDataset id="leadsProvidedStackChart" data="{SelectionParameterModel>/Stacked_Column}">
+				<viz.data:dimensions>
+					<viz.data:DimensionDefinition name="Call Count" value="{CallCount}"/>
+				</viz.data:dimensions>
+				<viz.data:measures>
+					<viz.data:MeasureDefinition name="Sales Call" value="{SalesCalls}"/>
+				</viz.data:measures>
+				<viz.data:measures>
+					<viz.data:MeasureDefinition name="Service Calls" value="{ServcieCalls}"/>
+				</viz.data:measures>
+				<viz.data:measures>
+					<viz.data:MeasureDefinition name="General Business Calls" value="{BusinessCalls}"/>
+				</viz.data:measures>
+				<viz.data:measures>
+					<viz.data:MeasureDefinition name="Busy or No-Answers" value="{BusyCalls}"/>
+				</viz.data:measures>
+				<viz.data:measures>
+					<viz.data:MeasureDefinition name="Hung Ups" value="{HungUps}"/>
+				</viz.data:measures>
+			</viz.data:FlattenedDataset>
+		</viz:dataset>
+		<viz:feeds>
+			<viz.feeds:FeedItem id='categoryAxisFeedStacked1' uid="categoryAxis" type="Dimension" values="Call Count"/>
+			<viz.feeds:FeedItem id='valueAxisFeedStacked1' uid="valueAxis" type="Measure" values="Sales Call"/>
+			<viz.feeds:FeedItem id='valueAxisFeedStacked2' uid="valueAxis" type="Measure" values="Service Calls"/>
+			<viz.feeds:FeedItem id='valueAxisFeedStacked3' uid="valueAxis" type="Measure" values="General Business Calls"/>
+			<viz.feeds:FeedItem id='valueAxisFeedStacked4' uid="valueAxis" type="Measure" values="Busy or No-Answers"/>
+			<viz.feeds:FeedItem id='valueAxisFeedStacked5' uid="valueAxis" type="Measure" values="Hung Ups"/>
+		</viz:feeds>
+	</viz:VizFrame>
+</core:FragmentDefinition>

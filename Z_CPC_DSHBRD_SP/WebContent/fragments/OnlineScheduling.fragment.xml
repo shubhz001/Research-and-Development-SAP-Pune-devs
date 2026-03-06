@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:chart="sap.suite.ui.commons" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data">
+		<HBox alignItems="Begin">
+	<Link text="View Report Detail" class="sapUiSmallMarginEnd"  press="handleOnlineSchedulingPress"/>
+	</HBox>
+	<FlexBox height="20px" alignItems="Start" justifyContent="Start" class="sapUiMediumMarginTop">
+		<items>
+			<l:VerticalLayout>
+			<Label id="totalLeadsBigText" text="" class="trackingLeadsNoCLass"/>
+			<Text text="Total Leads" class="trackingLeadstextCLass"/>
+			</l:VerticalLayout>
+		</items>
+	</FlexBox>
+	<viz:VizFrame id="idVizFrameOnlineScheduling" uiConfig="{applicationSet:'fiori'}" vizType="pie" width="100%" height="350px">
+		<viz:dataset>
+			<viz.data:FlattenedDataset data="{SelectionParameterModel>/Pie}">
+				<viz.data:dimensions>
+					<viz.data:DimensionDefinition name="Call Types" value="{CallType}"/>
+				</viz.data:dimensions>
+				<viz.data:measures>
+					<viz.data:MeasureDefinition name="Value" value="{Value}"/>
+				</viz.data:measures>
+			</viz.data:FlattenedDataset>
+		</viz:dataset>
+		<viz:feeds>
+			<viz.feeds:FeedItem id='categoryAxisFeedOnlineScheduling' uid="color" type="Dimension" values="Call Types"/>
+			<viz.feeds:FeedItem id='valueAxisFeedOnlineScheduling' uid="size" type="Measure" values="Value"/>
+			
+		</viz:feeds>
+	</viz:VizFrame>
+</core:FragmentDefinition>

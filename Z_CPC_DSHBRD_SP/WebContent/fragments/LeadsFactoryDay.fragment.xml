@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:chart="sap.suite.ui.commons" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data">
+	<FlexBox height="20px" alignItems="Start" justifyContent="End">
+			<items>
+					<ToggleButton text="Call Time" id="idCallTimeToggleBtn" pressed="true" press="handleCallTimeToggleBtnPress"/>
+					<ToggleButton text="Call Day" id="idWeeklyDayToggleBtn" press="handleWeeklyDayToggleBtnPress" class="sapUiSmallMarginEnd"/>
+			</items>
+		</FlexBox>
+	<viz:VizFrame id="idVizFrameLeadsFactoryDay" visible="true" uiConfig="{applicationSet:'fiori'}" vizType="line" width="100%" height="350px">
+		<viz:dataset>
+			<viz.data:FlattenedDataset data="{SelectionParameterModel>/LeadsFactoryByTime}">
+				<viz.data:dimensions>
+					<viz.data:DimensionDefinition name="Time" value="{Time}"/>
+				</viz.data:dimensions>
+				<viz.data:measures>
+					<viz.data:MeasureDefinition name="Call Count" value="{CallCount}"/>
+				</viz.data:measures>
+			
+			</viz.data:FlattenedDataset>
+		</viz:dataset>
+		<viz:feeds>
+			<viz.feeds:FeedItem id='categoryAxisFeedLeadsFactoryDay' uid="categoryAxis" type="Dimension" values="Time"/>
+			<viz.feeds:FeedItem id='valueAxisFeedLeadsFactoryDay' uid="valueAxis" type="Measure" values="Call Count"/>
+			
+		</viz:feeds>
+	</viz:VizFrame>
+	<viz:VizFrame id="idVizFrameLeadsFactoryDayTime" visible="false" uiConfig="{applicationSet:'fiori'}" vizType="line" width="100%" height="350px">
+		<viz:dataset>
+			<viz.data:FlattenedDataset data="{SelectionParameterModel>/LeadsFactoryByDay}">
+				<viz.data:dimensions>
+					<viz.data:DimensionDefinition name="Time" value="{Time}"/>
+				</viz.data:dimensions>
+				<viz.data:measures>
+					<viz.data:MeasureDefinition name="Call Count" value="{CallCount}"/>
+				</viz.data:measures>
+			
+			</viz.data:FlattenedDataset>
+		</viz:dataset>
+		<viz:feeds>
+			<viz.feeds:FeedItem id='categoryAxisFeedLeadsFactoryDayTime' uid="categoryAxis" type="Dimension" values="Time"/>
+			<viz.feeds:FeedItem id='valueAxisFeedLeadsFactoryDayTime' uid="valueAxis" type="Measure" values="Call Count"/>
+			
+		</viz:feeds>
+	</viz:VizFrame>
+</core:FragmentDefinition>

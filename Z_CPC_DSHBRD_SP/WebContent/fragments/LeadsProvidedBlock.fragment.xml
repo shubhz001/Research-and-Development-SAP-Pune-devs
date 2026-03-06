@@ -1,0 +1,61 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" class="sapUiSizeCompact">
+	<core:Fragment fragmentName="cpc.CPC_Dashboard_Split.fragments.LeadsProvided" type="XML" />
+	<l:HorizontalLayout
+		class="callslayoutWidthClass sapUiSmallMarginTop">
+		<Image src="Image/call.PNG" height="3rem" />
+		<l:VerticalLayout>
+			<Title id="revenueCaptured" text=""
+				class="callsTitleClass" />
+				<Text text="Revenue Captured in Answered Calls *"
+					class="callsTextClass" />
+		</l:VerticalLayout>
+	</l:HorizontalLayout>
+	<l:HorizontalLayout
+		class="callslayoutWidthClass sapUiSmallMarginTop">
+		<Image src="Image/Unanswered.PNG" height="3rem" />
+		<l:VerticalLayout>
+			<Title id="revenueMissed" text=""
+				class="callsTitleClass" />
+				<Text text="Revenue missed due to busy/no answered *"
+					class="callsTextClass" />
+		</l:VerticalLayout>
+	</l:HorizontalLayout>
+	<Text class="noteClass sapUiSmallMarginTop" width="60%"
+	text="*Captured and missed revenue assumes that each call tracking leads represents a $300 sales opportunity"
+	maxLines="2" />
+	<core:Fragment fragmentName="cpc.CPC_Dashboard_Split.fragments.TrackingLeads"
+		type="XML" />
+	<l:HorizontalLayout
+		class="callsOnlineSchedulinglayoutWidthClass">
+		<l:VerticalLayout>
+			<l:HorizontalLayout>
+				<Image src="Image/AnsweredScreen1.PNG" height="2rem" />
+				<Title id="answeredCalls" text=""
+					class="callsOnlineScheulingTitleClass" />
+			</l:HorizontalLayout>
+			<Title text="Answered Calls" class="callsTitleClass sapUiTinyMarginBegin" />
+		</l:VerticalLayout>
+	</l:HorizontalLayout>
+	<l:HorizontalLayout
+		class="callsOnlineSchedulinglayoutWidthClass">
+		<l:VerticalLayout>
+			<l:HorizontalLayout>
+				<Image src="Image/UnansweredScreen1.PNG" height="2rem" />
+				<Title id="busyCalls" text=""
+					class="callsOnlineScheulingTitleClass" />
+			</l:HorizontalLayout>
+			<Title text="Busy/No Answer" class="callsTitleClass" />
+		</l:VerticalLayout>
+	</l:HorizontalLayout>
+	<l:HorizontalLayout
+		class="callsOnlineSchedulinglayoutWidthClass">
+		<l:VerticalLayout>
+			<l:HorizontalLayout>
+				<Image src="Image/HungUpScreen1.png" height="2rem" />
+				<Title id="hungupCalls" text=""
+					class="callsOnlineScheulingTitleClass" />
+			</l:HorizontalLayout>
+			<Title text="Caller Hung Up" class="callsTitleClass" />
+		</l:VerticalLayout>
+	</l:HorizontalLayout>	
+</core:FragmentDefinition>

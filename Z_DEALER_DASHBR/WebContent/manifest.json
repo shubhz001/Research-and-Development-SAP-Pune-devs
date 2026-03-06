@@ -1,0 +1,659 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "cpc.CPC_Dashboard_Dealer_Split",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZCPC_Dashboard_Dealer_Split": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC01_Q0001_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC01_Q0003_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_KPIs_NoFilter": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC01_Q0009_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_KPIs_NoFilter_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC01_Q0013_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_KPIs_B": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC01_Q0007_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_KPIs_B_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC01_Q0011_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_KPIs_D": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC01_Q0008_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_KPIs_D_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC01_Q0012_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_KPIs_B&D": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC01_Q0006_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_KPIs_B&D_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC01_Q0010_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC02_Q0001_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_Q1_Q3": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC2A_Q0009_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_Q1_Q3_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC2A_Q0005_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_Q2": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC2A_Q0011_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_Q2_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC2A_Q0006_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_Q4A": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC2A_Q0003_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_Q4A_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC2A_Q0007_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_Q4B": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC2A_Q0004_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_Q4B_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC2A_Q0008_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC02_Q0002_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_HyperLink": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPC_CT_Q0001_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen2_HyperLink_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPC_CT_Q0002_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen3": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC03_Q0001_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen3_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC03_Q0002_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen3_DealerDetails": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC03_Q0003_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen3_DealerDetails_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_SC03_Q0004_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen3_Hyperlink": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_OSS_R1_SC03_Q0001_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Dealer_Split_Screen3_Hyperlink_LY": {
+				"uri": "/sap/opu/odata/sap/ZCV_CPCLG_OSS_R1_SC03_Q0002_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCPC_Dashboard_Usage_Metrics": {
+				"uri": "/sap/opu/odata/sap/ZUSER_ODATA_SRV",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+			
+			
+			
+		}
+		
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "cpc.CPC_Dashboard_Dealer_Split.view.View1",
+			"type": "XML",
+			"async": true,
+			"id": "View1"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {},
+				"sap.ui.table" : {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "cpc.CPC_Dashboard_Dealer_Split.i18n.i18n"
+				}
+			},
+			"DashboardFirstScreenModel": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+						
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split",
+				"preload": true
+			},
+			"DashboardFirstScreenModel_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_LY",
+				"preload": true
+			},
+			"DashboardFirstScreenModel_KPIs_NoFilter": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_KPIs_NoFilter",
+				"preload": true
+			},
+			"DashboardFirstScreenModel_KPIs_NoFilter_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_KPIs_NoFilter_LY",
+				"preload": true
+			},
+			"DashboardFirstScreenModel_KPIs_B": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_KPIs_B",
+				"preload": true
+			},
+			"DashboardFirstScreenModel_KPIs_B_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_KPIs_B_LY",
+				"preload": true
+			},
+			"DashboardFirstScreenModel_KPIs_D": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_KPIs_D",
+				"preload": true
+			},
+			"DashboardFirstScreenModel_KPIs_D_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_KPIs_D_LY",
+				"preload": true
+			},
+			"DashboardFirstScreenModel_KPIs_B&D": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_KPIs_B&D",
+				"preload": true
+			},
+			"DashboardFirstScreenModel_KPIs_B&D_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_KPIs_B&D_LY",
+				"preload": true
+			},
+			"DashboardSecondScreenModel": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2",
+				"preload": true
+			},
+			"DashboardSecondScreenModelQ1AndQ3": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_Q1_Q3",
+				"preload": true
+			},
+			"DashboardSecondScreenModelQ1AndQ3_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_Q1_Q3_LY",
+				"preload": true
+			},
+			"DashboardSecondScreenModelQ2": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_Q2",
+				"preload": true
+			},
+			"DashboardSecondScreenModelQ2_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_Q2_LY",
+				"preload": true
+			},
+			"DashboardSecondScreenModelQ4A": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_Q4A",
+				"preload": true
+			},
+			"DashboardSecondScreenModelQ4A_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_Q4A_LY",
+				"preload": true
+			},
+			"DashboardSecondScreenModelQ4B": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_Q4B",
+				"preload": true
+			},
+			"DashboardSecondScreenModelQ4B_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_Q4B_LY",
+				"preload": true
+			},
+			"DashboardSecondScreenModel_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_LY",
+				"preload": true
+			},
+			"DashboardSecondScreenModel_Hyperlink": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_HyperLink",
+				"preload": true
+			},
+			"DashboardSecondScreenModel_Hyperlink_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen2_HyperLink_LY",
+				"preload": true
+			},
+			"DashboardThirdScreenModel": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen3",
+				"preload": true
+			},
+			"DashboardThirdScreenModel_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen3_LY",
+				"preload": true
+			},
+			"DashboardThirdScreenModel_DealerDetails": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen3_DealerDetails",
+				"preload": true
+			},
+			"DashboardThirdScreenModel_DealerDetails_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen3_DealerDetails_LY",
+				"preload": true
+			},
+			
+			"DashboardThirdScreenModel_Hyperlink": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen3_Hyperlink",
+				"preload": true
+			},
+			"DashboardThirdScreenModel_Hyperlink_LY": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Dealer_Split_Screen3_Hyperlink_LY",
+				"preload": true
+			},
+			"DashboardUsageMetrics": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+				
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCPC_Dashboard_Usage_Metrics",
+				"preload": true
+			}
+			
+			
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "cpc.CPC_Dashboard_Dealer_Split.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteView1",
+					"pattern": "RouteView1",
+					"target": [
+						"TargetView1"
+					]
+				}
+			],
+			"targets": {
+				"TargetView1": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "View1",
+					"viewName": "View1"
+				}
+			}
+		}
+	}
+}

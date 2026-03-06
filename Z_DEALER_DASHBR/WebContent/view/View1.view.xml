@@ -1,0 +1,170 @@
+<mvc:View controllerName="cpc.CPC_Dashboard_Dealer_Split.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:o="sap.uxap" xmlns:vbm="sap.ui.vbm" xmlns:core="sap.ui.core"
+	class="sapUiSizeCompact" xmlns:vk="sap.ui.vk">
+	<App>
+		<Page title="{i18n>title}" enableScrolling="true" showHeader="false">
+			<content>
+				<o:ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="false" alwaysShowContentHeader="false"
+					preserveHeaderStateOnScroll="false" headerContentPinnable="false" isChildPage="true" enableLazyLoading="false" upperCaseAnchorBar="false">
+					<o:headerTitle>
+						<o:ObjectPageDynamicHeaderTitle>
+							<o:expandedHeading>
+								<l:HorizontalLayout id="headerBarExpanded">
+									<Title text="{i18n>cpc_TitleTxt} | {i18n>cpc_FullFormTxt}" wrapping="true" class="leftFullFormTilteClass sapUiTinyMargin"/>
+									<l:VerticalLayout>
+										<FlexBox alignItems="Start" justifyContent="Start">
+											<Label text="Total Leads: {SelectionParameterModel>/TotalLeads}" class="RighttitleSizeClass"/>
+										</FlexBox>
+									</l:VerticalLayout>
+								</l:HorizontalLayout>
+							</o:expandedHeading>
+							<o:snappedHeading>
+								<l:HorizontalLayout id="headerBar">
+									<Title text="{i18n>cpc_TitleTxt} | {i18n>cpc_FullFormTxt}" wrapping="true" class="leftFullFormTilteClass sapUiTinyMargin"/>
+									<l:VerticalLayout>
+										<FlexBox alignItems="Start" justifyContent="Start">
+											<Label text="Total Leads: {SelectionParameterModel>/TotalLeads}" class="RighttitleSizeClass"/>
+										</FlexBox>
+									</l:VerticalLayout>
+								</l:HorizontalLayout>
+							</o:snappedHeading>
+						</o:ObjectPageDynamicHeaderTitle>
+					</o:headerTitle>
+					<o:headerContent>
+						<core:Fragment fragmentName="cpc.CPC_Dashboard_Dealer_Split.fragments.CommonFilters" type="XML"/>
+					</o:headerContent>
+					<o:sections>
+						<o:ObjectPageSection id="idHomeSection" showTitle="false">
+							<o:subSections>
+								<o:ObjectPageSubSection>
+									<o:blocks>
+										<l:VerticalLayout width="100%">
+											<l:BlockLayout background="Dashboard">
+												<l:BlockLayoutRow accentCells="Accent1">
+													<l:BlockLayoutCell id="leadsProvidedBlock" width="1" title="Leads Provided via Call Tracking">
+														<core:Fragment fragmentName="cpc.CPC_Dashboard_Dealer_Split.fragments.LeadsProvidedBlock" type="XML"/>
+													</l:BlockLayoutCell>
+													<l:BlockLayoutCell id="onlineSchedulingBlock" width="1" title="Online Scheduling Leads">
+														<core:Fragment fragmentName="cpc.CPC_Dashboard_Dealer_Split.fragments.OnlineSchedulingBlock" type="XML"/>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+											</l:BlockLayout>
+											<FlexBox height="20px" alignItems="Start" justifyContent="End">
+												<items>
+													<Button visible="false" text="Export PDF" class="exportButtonClass sapUiLargeMarginEnd" press="handlePdfDownloadHomeScreen"/>
+												</items>
+											</FlexBox>
+										</l:VerticalLayout>
+									</o:blocks>
+								</o:ObjectPageSubSection>
+							</o:subSections>
+						</o:ObjectPageSection>
+						<o:ObjectPageSection visible="false" id="idLeadsProvidedSection" showTitle="false">
+							<o:subSections>
+								<o:ObjectPageSubSection>
+									<o:blocks>
+										<l:VerticalLayout width="100%">
+											<Toolbar style="Clear">
+												<l:HorizontalLayout>
+													<Button icon="sap-icon://nav-back" class="homeBtnClass" type="Transparent" text="Home" press="handleHomeBtnPress"/>
+													<Label class="callTrackingLabelClass sapUiTinyMarginTop" text="/ Call Tracking"/>
+													<!--<core:Icon src="sap-icon://business-objects-experience" class="sapUiTinyMarginBegin iconClassHyperlink" color="#031E48"-->
+													<!--	press="handleHyperLinkPressLeadsProvided"></core:Icon>-->
+													<Button icon="sap-icon://business-objects-experience" text="Download Report" class="callTrackingLabelClass sapUiSizeCompact .sapMBtnContent" type="Transparent" color="#031E48" press="handleHyperLinkPressLeadsProvided"/>
+												</l:HorizontalLayout>
+												<ToolbarSpacer/>
+												<ComboBox id="idCallTypes" change="handleCallTypesChange" placeholder="All Call Types">
+													<items>
+														<core:ListItem key="Sales Call" text="Sales Call"/>
+														<core:ListItem key="Service Call" text="Service Call"/>
+														<core:ListItem key="General Business Call" text="General Business Call"/>
+														<core:ListItem key="Busy-No Answer" text="Busy-No Answer"/>
+														<core:ListItem key="Hang-Up" text="Hang-Up"/>
+													</items>
+												</ComboBox>
+												<core:Icon src="sap-icon://sys-cancel" id="idCallTypesCancelIcon" visible="false" class="sapUiTinyMargin iconClassCancelIcon"
+													color="#FF0000" press="clearCallTypeFilter"></core:Icon>
+												<MultiInput id="idLeadsProvidedStates" placeholder="All States" enableMultiLineMode="true" width="15%"
+													valueHelpRequest="handleValueHelpStatesLP" showValueHelp="true"/>
+												<core:Icon src="sap-icon://sys-cancel" id="idStatesCancelIcon" visible="false" class="sapUiTinyMargin iconClassCancelIcon" color="#FF0000"
+													press="handleStatesChange"></core:Icon>
+											</Toolbar>
+											<l:BlockLayout background="Dashboard">
+												<l:BlockLayoutRow accentCells="Accent1">
+													<l:BlockLayoutCell id="quadrant1" width="1">
+														<core:Fragment fragmentName="cpc.CPC_Dashboard_Dealer_Split.fragments.LeadsFactoryParameters" type="XML"/>
+													</l:BlockLayoutCell>
+													<l:BlockLayoutCell id="quadrant2" width="1">
+														<Toolbar style="Clear">
+															<Title text="Leads: Factory and Marketing" class="titleSizeClass"/>
+														</Toolbar>
+														<core:Fragment fragmentName="cpc.CPC_Dashboard_Dealer_Split.fragments.LeadsFactory" type="XML"/>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+												<l:BlockLayoutRow accentCells="Accent1">
+													<l:BlockLayoutCell id="quadrant3" width="1">
+														<core:Fragment fragmentName="cpc.CPC_Dashboard_Dealer_Split.fragments.LeadsFactoryStates" type="XML"/>
+													</l:BlockLayoutCell>
+													<l:BlockLayoutCell id="quadrant4" width="1">
+														<Toolbar style="Clear">
+															<Title text="Leads: Factory and Marketing (Day)" class="titleSizeClass"/>
+														</Toolbar>
+														<core:Fragment fragmentName="cpc.CPC_Dashboard_Dealer_Split.fragments.LeadsFactoryDay" type="XML"/>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+											</l:BlockLayout>
+											<FlexBox height="20px" alignItems="Start" justifyContent="End">
+												<items>
+													<Button visible="false" text="Export PDF" class="exportButtonClass sapUiLargeMarginEnd" press="handlePdfDownloadLeadsProvided"/>
+												</items>
+											</FlexBox>
+										</l:VerticalLayout>
+									</o:blocks>
+								</o:ObjectPageSubSection>
+							</o:subSections>
+						</o:ObjectPageSection>
+						<o:ObjectPageSection visible="false" id="idOnlineScheduling" showTitle="false">
+							<o:subSections>
+								<o:ObjectPageSubSection>
+									<o:blocks>
+										<l:VerticalLayout width="100%">
+											<Toolbar style="Clear">
+												<l:HorizontalLayout>
+													<Button icon="sap-icon://nav-back" class="homeBtnClass" type="Transparent" text="Home" press="handleHomeBtnPress"/>
+													<Label class="callTrackingLabelClass sapUiTinyMarginTop" text="/ Online Scheduling"/>
+													<!--<core:Icon src="sap-icon://business-objects-experience" class="sapUiTinyMarginBegin iconClassHyperlink" color="#031E48"-->
+													<!--	press="handleHyperLinkPressOnlineScheduling"></core:Icon>-->
+														<Button icon="sap-icon://business-objects-experience" text="Download Report" class="callTrackingLabelClass sapUiSizeCompact .sapMBtnContent" type="Transparent" color="#031E48" press="handleHyperLinkPressOnlineScheduling"/>
+												</l:HorizontalLayout>
+												<ToolbarSpacer/>
+												<MultiInput id="idStatesOnlineScheduling" placeholder="All States" enableMultiLineMode="true" width="15%"
+													valueHelpRequest="handleValueHelpStatesOSS" showValueHelp="true"/>
+												<core:Icon src="sap-icon://sys-cancel" id="idStatesOnlineSchCancelIcon" visible="false" class="sapUiTinyMargin iconClassCancelIcon"
+													color="#FF0000" press="handleStatesChange"></core:Icon>
+											</Toolbar>
+											<l:BlockLayout background="Dashboard">
+												<l:BlockLayoutRow accentCells="Accent1">
+													<l:BlockLayoutCell id="quadrant1OSS" width="1.7">
+														<core:Fragment fragmentName="cpc.CPC_Dashboard_Dealer_Split.fragments.OnlineSchedulingStates" type="XML"/>
+													</l:BlockLayoutCell>
+													<l:BlockLayoutCell id="quadrant2OSS" width="2">
+														<core:Fragment fragmentName="cpc.CPC_Dashboard_Dealer_Split.fragments.CustomerTable" type="XML"/>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+											</l:BlockLayout>
+											<FlexBox height="20px" alignItems="Start" justifyContent="End">
+												<items>
+													<Button visible="false" text="Export PDF" class="exportButtonClass sapUiLargeMarginEnd" press="handlePdfDownload"/>
+												</items>
+											</FlexBox>
+										</l:VerticalLayout>
+									</o:blocks>
+								</o:ObjectPageSubSection>
+							</o:subSections>
+						</o:ObjectPageSection>
+					</o:sections>
+				</o:ObjectPageLayout>
+			</content>
+		</Page>
+	</App>
+</mvc:View>

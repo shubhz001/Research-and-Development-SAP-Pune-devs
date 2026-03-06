@@ -1,0 +1,167 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:vbm="sap.ui.vbm" xmlns:vk="sap.ui.vk" class="sapUiSizeCompact">
+	<Toolbar style="Clear">
+		<Title text="Leads by State" class="titleSizeClass" />
+		<ToolbarSpacer />
+	</Toolbar>
+	<Toolbar style="Clear" height="4%">
+			<ObjectStatus id="legend1onlinescheduling"
+				class="classLegend1" text="" icon="sap-icon://color-fill" />
+			<ObjectStatus id="legend2onlinescheduling"
+				class="classLegend2" text="" icon="sap-icon://color-fill" />
+			<ObjectStatus id="legend3onlinescheduling"
+				class="classLegend3" text="" icon="sap-icon://color-fill" />
+			<ObjectStatus id="legend4onlinescheduling"
+				class="classLegend4" text="" icon="sap-icon://color-fill" />
+			<ToolbarSpacer />
+		</Toolbar>
+	<Panel height="13rem" class="panelclassGeoMapUS">
+		<vk:MapContainer autoAdjustHeight="false" showRectangularZoom="false" showFullScreen="false" showNavbar="false" showSettings="false" showMapLayer="false">
+			<vk:content>
+				<vk:ContainerContent icon="US Mainland" title="US Mainland">
+					<vk:content>
+						<vbm:AnalyticMap 
+							regions="{SelectionParameterModel>/StatesLeads}"
+							width="100%" height="50%" initialZoom="3"
+							initialPosition="-96;37;0" disablePan="true" disableZoom="true" legendVisible="false">
+							<vbm:regions>
+								<vbm:Region code="{SelectionParameterModel>States}"
+									color="{SelectionParameterModel>color}"
+									tooltip="{SelectionParameterModel>States} :
+									{SelectionParameterModel>OssLeads}">
+								</vbm:Region>
+							</vbm:regions>
+						</vbm:AnalyticMap> 
+					</vk:content>
+				</vk:ContainerContent>
+			</vk:content>
+		</vk:MapContainer>
+	</Panel>
+	<HBox class="OSSAKHIMapsBox">
+		<Panel height="11rem" width="9rem" class="panelclassGeoMapAKHIOSS">
+			<vk:MapContainer autoAdjustHeight="false" showRectangularZoom="false" showFullScreen="false" showNavbar="false" showSettings="false" showMapLayer="false">
+				<vk:content>
+					<vk:ContainerContent title="Alaska">
+						<vk:content>
+							<vbm:AnalyticMap 
+								regions="{SelectionParameterModel>/StatesLeads}"
+								width="100%" height="50%" initialZoom="1"
+								initialPosition="-172;47;0" disablePan="true" disableZoom="true" regionDeselect="handleDeselect">
+								<vbm:regions>
+									<vbm:Region code="{SelectionParameterModel>States}"
+										color="{SelectionParameterModel>color}"
+										tooltip="{SelectionParameterModel>States} :
+										{SelectionParameterModel>OssLeads}">
+									</vbm:Region>
+								</vbm:regions>
+							</vbm:AnalyticMap> 
+						</vk:content>
+					</vk:ContainerContent>
+				</vk:content>
+			</vk:MapContainer>
+		</Panel>
+		<Panel height="11rem" width="10rem" class="panelclassGeoMapAKHI">
+			<vk:MapContainer autoAdjustHeight="false" showRectangularZoom="false" showFullScreen="false" showNavbar="false" showSettings="false" showMapLayer="false">
+				<vk:content>
+					<vk:ContainerContent title="Hawaii">
+						<vk:content>
+							<vbm:AnalyticMap 
+								regions="{SelectionParameterModel>/StatesLeads}"
+								width="100%" height="50%" initialZoom="4"
+								initialPosition="-157.99;16;0" disablePan="true" disableZoom="true" regionDeselect="handleDeselect">
+								<vbm:regions>
+									<vbm:Region code="{SelectionParameterModel>States}"
+										color="{SelectionParameterModel>color}"
+										tooltip="{SelectionParameterModel>States} :
+										{SelectionParameterModel>OssLeads}">
+									</vbm:Region>
+								</vbm:regions>
+							</vbm:AnalyticMap> 
+						</vk:content>
+					</vk:ContainerContent>
+				</vk:content>
+			</vk:MapContainer>
+		</Panel>
+	</HBox>
+		<l:HorizontalLayout id="progressIndicatorsOSS" class="OSSBarGraph">
+			<l:VerticalLayout class="sapUiContentPadding ossScreen sapUiSmallMarginTop">
+				<Label text="Offered" class="leadsClassOSS" />
+				<Label text="Unscheduled" class="leadsClassOSS" />
+				<Label text="Scheduled" class="leadsClassOSS" />
+				<Label text="Completed" class="leadsClassOSS" />
+			</l:VerticalLayout>
+			<l:VerticalLayout class="sapUiContentPadding ossScreen sapUiSmallMarginTop">
+				<l:HorizontalLayout class="ossLeadsNumberBox">
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/OSSOfferedPer}"
+						class="sapUiSmallMarginBegin progressBarOSS" state="Error"
+						displayOnly="true" width="50%" />
+					<Label text="{SelectionParameterModel>/OSSOffered}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="ossLeadsNumberBox">
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/OSSUnscheduledPer}"
+						class="sapUiSmallMarginBegin progressBarOSS" state="None"
+						displayOnly="true" width="50%" />
+					<Label text="{SelectionParameterModel>/OSSUnscheduled}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="ossLeadsNumberBox">
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/OSSScheduledPer}"
+						class="sapUiSmallMarginBegin progressBarOSS" state="Information"
+						displayOnly="true" width="50%" />
+					<Label text="{SelectionParameterModel>/OSSScheduled}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="ossLeadsNumberBox">
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/OSSCompletedPer}"
+						class="sapUiSmallMarginBegin progressBarOSS" state="Success"
+						displayOnly="true" width="50%" />
+					<Label text="{SelectionParameterModel>/OSSCompleted}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+			</l:VerticalLayout>
+			<l:VerticalLayout class="sapUiContentPadding ossScreen sapUiSmallMarginTop">
+				<Label text="Rejected" class="leadsClassOSS sapUiLargeMarginBegin" />
+				<Label text="Cancelled" class="leadsClassOSS sapUiLargeMarginBegin" />
+				<Label text="Expired" class="leadsClassOSS sapUiLargeMarginBegin" />
+				<Label text="Paused" class="leadsClassOSS sapUiLargeMarginBegin" />
+			</l:VerticalLayout>
+			<l:VerticalLayout class="sapUiContentPadding ossScreen sapUiSmallMarginTop">
+				<l:HorizontalLayout class="ossLeadsNumberBox">
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/OSSRejectedPer}"
+						class="sapUiSmallMarginBegin progressBarOSS" state="Error"
+						displayOnly="true" width="50%" />
+					<Label text="{SelectionParameterModel>/OSSRejected}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="ossLeadsNumberBox">
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/OSSCanceledPer}"
+						class="sapUiSmallMarginBegin progressBarOSS" state="None"
+						displayOnly="true" width="50%" />
+					<Label text="{SelectionParameterModel>/OSSCanceled}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="ossLeadsNumberBox">
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/OSSExpiredPer}"
+						class="sapUiSmallMarginBegin progressBarOSS" state="Information"
+						displayOnly="true" width="50%" />
+					<Label text="{SelectionParameterModel>/OSSExpired}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+				<l:HorizontalLayout class="ossLeadsNumberBox">
+					<ProgressIndicator
+						percentValue="{SelectionParameterModel>/OSSPausedPer}"
+						class="sapUiSmallMarginBegin progressBarOSS" state="Success"
+						displayOnly="true" width="50%" />
+					<Label text="{SelectionParameterModel>/OSSPaused}"
+						class="sapUiLargeMarginBegin leadsNumberClass" />
+				</l:HorizontalLayout>
+			</l:VerticalLayout>
+		</l:HorizontalLayout>
+</core:FragmentDefinition>

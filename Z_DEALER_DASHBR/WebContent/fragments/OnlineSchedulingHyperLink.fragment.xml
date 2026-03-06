@@ -1,0 +1,139 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Online scheduling Detail"  stretch="true" class="sapUiSizeCompact">
+		
+		<Table id="idHyperlinkOnlineScheduling" width="250%" inset="false" items="{ path: 'SelectionParameterModel>/HyperlinkOnlineScheduling/0' }">
+			<headerToolbar>
+			
+				<OverflowToolbar >
+				<ToolbarSpacer/>
+				<Button type="Ghost" text="" icon="sap-icon://download" press="handleHyperlinkOnlineSchedulingExport"/>
+			
+			</OverflowToolbar>
+				
+			</headerToolbar>
+			<columns>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Distributor"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Distributor Id"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Dealer"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Dealer HVP"/>
+				</Column>
+					<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="FAD"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Brand"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Current Status"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Job Creation Date"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Job Accepted Date"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Job Scheduled Date"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Job Completion Date"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Job Rejected Date"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Job Cancelled Date"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Job Paused Date"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Appointment Creation Date"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Appointment Completion Date"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Customer First Name"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Customer Last Name"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Customer Address"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Customer City"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Customer State"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Customer Zip Code"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Customer Email"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Customer Phone"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Customer Acceptance Time HRS"/>
+				</Column>
+				<Column minScreenWidth="Tablet" width="10%" demandPopin="true">
+					<Text text="Completion Time(Days)"/>
+				</Column>
+			</columns>
+			<items>
+			
+					<ColumnListItem vAlign="Middle">
+							<cells>
+								
+								
+								<Text text="{SelectionParameterModel>A2HOYU4PO5L16H3TZK008UXQ1BSA}"/>
+								<Text text="{SelectionParameterModel>A2HQCFF7YB7ASICZ7ID0E11LAY4L}"/>
+								<Text text="{SelectionParameterModel>A2HK584U64195CQVU4PPJPLGSETB}"/>
+								<Text text="{SelectionParameterModel>A2HKJ4RHDOWDIIXILH7ZA8IVZUY3}"/>
+								<Text text="{SelectionParameterModel>A2HPUK7MLZ5UUOI75MKTKMI4GHHS}"/>
+								<Text text="{SelectionParameterModel>A2HS11Q0ZWBZ3RTM6GXT58XOOOMJ}"/>
+								<Text text="{SelectionParameterModel>A2HOYS2CRPA0V347MEYLL58MYL52}"/>
+								<Text text="{SelectionParameterModel>A2HKZPYQ6Q0FHUTGK3VPV8QCEQAL_T}"/>
+								<Text text="{SelectionParameterModel>A2HFBZ4U8DSHB990MTNED41NSKMT_T}"/>
+								<Text text="{SelectionParameterModel>A2HKWB33NG5MGXC0CTM4MDDFSYFG_T}"/>
+								<Text text="{SelectionParameterModel>A2HOSP343N1QUW3BMF6ZXBWK09GD_T}"/>
+								<Text text="{SelectionParameterModel>A2HNQYL44ZCVWW5SBTLB2C9MO3LE_T}"/>
+								<Text text="{SelectionParameterModel>A2HJUKPUM6PONFMQ33VHVJTUN64B_T}"/>
+								<Text text="{SelectionParameterModel>A2HRJML3HSL4ZZQ80E57YL7X9ZJE_T}"/>
+								<Text text="{SelectionParameterModel>A2HKOR2EUF42B6PCG86CYJOH7DMM_T}"/>
+								<Text text="{SelectionParameterModel>A2HQGQ5HYO019L5T1VPG2VCEXSBA_T}"/>
+								<Text text="{SelectionParameterModel>A2HS1EH4CNQHOHRW8RC929M24KE1}"/>
+								<Text text="{SelectionParameterModel>A2HKDZ1OJ8W6KA1BWC0GRI71RU9T}"/>
+								<Text text="{SelectionParameterModel>A2HO1PDFB9YV6Q0EP7QAGVB30XOL}"/>
+								<Text text="{SelectionParameterModel>A2HUA0FI2ZUDBP5ZVROCFC4Y6MVQ}"/>
+								<Text text="{SelectionParameterModel>A2HHBF5ENGIBIHD3WBMWQPFGLE9M}"/>
+								<Text text="{SelectionParameterModel>A2HO5WR0QDKHD4RGNPCUOCTFL3P7}"/>
+								<Text text="{SelectionParameterModel>A2HL3LHTNJF83KSKUQLGU91YN9U3}"/>
+								<Text text="{SelectionParameterModel>A2HORJYO9YMKOF517Z8S4B7J9NGI}"/>
+								<Text text="{SelectionParameterModel>A006NZKS3HHO23V7C6V1BI0Y7S}"/>
+								<Text text="{SelectionParameterModel>A006NZKS3HHO23V7C6V1BI14JC}"/>
+								
+								
+							</cells>
+						</ColumnListItem>
+			</items>
+		</Table>
+		<buttons>
+		
+		<Button text="Cancel" type="Emphasized" press="handleOnlineSchedulingHyperlinkClose"/>	
+		</buttons>
+		
+	</Dialog>
+	
+</core:FragmentDefinition>

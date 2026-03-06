@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact">
+	 <TableSelectDialog items="{
+			path : '/Dealer'
+		}" confirm="handleDealerValueHelpConfirm" noDataText="No Data" liveChange="handleDealerLiveSearch" title="Dealer" search="handleDealerLiveSearch"
+		 cancel="handleCloseDealerValueHelp" multiSelect="true" rememberSelections="true">
+		
+		<ColumnListItem>
+			<cells>
+				<Text text="{A2HH1AHVH1XFP2B8U26XY6E1QA0E}" />
+				<Text text="{A2HQ3BP0M836H2ES6HU2I5A52QNJ}" />
+			</cells>
+		</ColumnListItem>
+		
+		<columns>
+			<Column  hAlign="Center" class="columnTitleClass">
+				<header>
+					<Text text="Dealer"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" hAlign="Center" demandPopin="true"  class="columnTitleClass">
+				<header>
+					<Text text="Dealer HVP"/>
+				</header>
+			</Column>
+			
+		</columns>
+	</TableSelectDialog> 
+	
+	
+	
+</core:FragmentDefinition>

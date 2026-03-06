@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" class="sapUiSizeCompact">
+	<l:HorizontalLayout id="commonFilters">
+		<l:VerticalLayout class="sapUiMediumMargin">
+			<Label text="{i18n>dateTimeLabel}" />
+			<ComboBox id="idDateTime" items="{SelectionParameterModel>/Date}"
+				selectedKey="CD" change="handleDateTimeChange" class="dateTimeBoxClass">
+				<core:ListItem key="{SelectionParameterModel>Key}"
+					text="{SelectionParameterModel>DateTime}" />
+			</ComboBox>
+		</l:VerticalLayout>
+		<l:VerticalLayout class="sapUiMediumMargin">
+			<Label text="{i18n>brandLabel}" />
+			<l:HorizontalLayout>
+				<ComboBox id="idBrand" items="{path : '/Brand/results'}"
+					change="handleBrandChange">
+					<core:ListItem key="{A2HGB2ED4OKF9J5AIITF49DYZ2BA}"
+						text="{A2HGB2ED4OKF9J5AIITF49DYZ2BA_T}" />
+				</ComboBox>
+				<core:Icon src="sap-icon://sys-cancel" id="idBrandCancelIcon"
+					visible="false" class="sapUiTinyMargin iconClassCancelIcon"
+					color="#FF0000" press="handleBrandChange"></core:Icon>
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+		<l:VerticalLayout class="sapUiMediumMargin">
+			<Label text="{i18n>distributorLabel}" />
+			<l:HorizontalLayout>
+				<MultiInput id="idDistributor" enableMultiLineMode="true"
+					width="230px" valueHelpRequest="handleValueHelpDistributor"
+					showValueHelp="true" />
+				<core:Icon src="sap-icon://sys-cancel" id="idDistrCancelIcon"
+					visible="false" class="sapUiTinyMargin iconClassCancelIcon"
+					color="#FF0000" press="handleDistributorChange"></core:Icon>
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+		<l:VerticalLayout class="sapUiMediumMargin">
+			<Label text="{i18n>dealer}" />
+			<l:HorizontalLayout>
+				<MultiInput id="idDealer" enableMultiLineMode="true"
+					width="230px" valueHelpRequest="handleValueHelpDealer"
+					showValueHelp="true" />
+				<core:Icon src="sap-icon://sys-cancel" id="idDealerCancelIcon"
+					visible="false" class="sapUiTinyMargin iconClassCancelIcon"
+					color="#FF0000" press="handleDealerChange"></core:Icon>
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+	</l:HorizontalLayout>
+</core:FragmentDefinition>

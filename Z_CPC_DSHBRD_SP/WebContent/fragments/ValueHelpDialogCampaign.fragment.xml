@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact">
+	<SelectDialog
+		noDataText="No Campaign Found"
+		title="Campaign"
+		liveChange="handleCampaignLiveSearch"
+		search="handleCampaignLiveSearch"
+		confirm="handleCampaignValueHelpConfirm"
+		cancel="handleCampaignClose"
+		multiSelect="true"
+		rememberSelections="true"
+		items="{
+			path: '/Campaign'
+		}"> 
+		<StandardListItem
+			title="{A2HGKN4494F3PQR2SQBH4PWDIAE1}" />
+	</SelectDialog>   
+</core:FragmentDefinition>

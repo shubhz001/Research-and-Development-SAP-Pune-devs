@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact">
+	<SelectDialog
+		noDataText="No State Found"
+		title="States"
+		liveChange="handleStatesOSSLiveSearch"
+		search="handleStatesOSSLiveSearch"
+		confirm="handleStatesOSSValueHelpConfirm"
+		cancel="handleStatesOSSClose"
+		multiSelect="true"
+		rememberSelections="true"> 
+	</SelectDialog> 
+</core:FragmentDefinition>

@@ -1,0 +1,554 @@
+/* Enter your custom styles here */
+.subtitle {
+	margin-left: 10.5rem!important;
+    margin-top: 0.7rem;
+}
+.sapFDynamicPageTitleMain.sapFDynamicPageTitleMainNoContent>.sapFDynamicPageTitleMainInner {
+    width: 110% !important;
+}
+.RighttitleSizeClass{
+font-size:11px;	
+color: white;
+margin-left: 10.5rem;
+display: flow-root !important;
+}
+.RighttitleSizeClass1{
+font-size:11px;	
+color: white;
+width: 120rem;
+margin-left: 2.4rem;
+/* font-weight:bolder; */
+display: flow-root !important; 
+margin-right: 0.2rem!important;
+}
+.RighttitleSizeClass3{
+	font-size:11px;	
+	color: white;
+	display: flow-root !important;
+}
+
+.leftTitleClass{
+	
+    font-size: 35px !important;
+    font-weight: BOLD;
+    color: white;
+}
+.leftFullFormTilteClass{
+	font-size: 25px !important;
+    color: white;
+}
+.numberClass{
+	font-size: 15px;
+    color: white;
+    font-weight: bold;
+}
+.sapUiSizeCompact .sapMBtnContent {
+    text-decoration: underline !important;
+    color: blue;
+   line-height: 1.7rem;
+}
+.mysapUiSizeCompact .sapMBtnContent {
+    text-decoration: none !important;
+    color: black;
+    line-height: 1.500rem;
+}
+.sapMLnk {
+    color: #0070b1 !important;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    text-decoration: underline;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.sapFDynamicPageTitle {
+    z-index: 3;
+    position: relative;
+    min-height: 3rem;
+    padding: 0.5rem 2rem 0.5rem 3rem;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    box-sizing: border-box;
+    background: linear-gradient(#3e3ea5, #507bca) !important;
+}
+.sapFDynamicPageHeader.sapFDynamicPageHeaderWithContent {
+    padding: 0rem 3rem !important;
+    box-shadow: 0 0.125rem 0 0 #eff4f9, inset 0 -0.125rem 0 0 #d1e0ee;
+}
+.sapFDynamicPageHeader {
+    z-index: 2;
+    position: relative;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background: white;
+}
+.sapUiSizeCompact .sapMTB {
+    height:4rem;
+}
+.bloackLayoutCellClass{
+	background:white;
+}
+.sapSuiteUiCommonsChartContainer {
+    height: 100%;
+}
+.callsTextClass{
+	font-size:11px;
+}
+.callsTitleClass{
+	
+	font-weight: bolder;
+}
+.callslayoutWidthClass{
+	width:50%;
+	
+}
+.noteClass{
+	margin-left: 0.6rem;
+	font-size: 10px !important;
+    font-style: italic;
+}
+.sapUiVlt.sapUiContentPadding {
+    padding: 0rem  !important;
+    box-sizing: border-box;
+}
+/*.btn {
+  background-color: DodgerBlue !important;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.btn:hover {
+  background-color: RoyalBlue !important;
+}*/
+.callsOnlineSchedulinglayoutWidthClass{
+		width:33.33%;
+}
+.callsOnlineScheulingTitleClass{
+	font-size: 30px !important;
+}
+.leadsClass{
+	font-weight: bold;
+	font-size:16px;
+}
+.leadsClassOSS{
+	font-weight: bold; 
+	font-size:12px;
+	margin-top: 4px;
+	margin-right: 8px;
+}
+.leadsNumberReasonRejectionClass {
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 0.2rem;
+}
+.sapMPIBarInformation {
+    background: #2cbf9d;
+}
+.sapMPIBarPositive {
+    background: #ef8a8a;
+}
+.sapMPIBarCritical {
+    background: #d6e400;
+}
+.sapMPIDisplayOnly:not(.sapMPIBarDisabled) .sapMPIBarNeutral {
+    background: #808eec;
+}
+.sapMPIBarNegative {
+    background: #efafff;
+}
+.progressBarOSS.sapMPI.sapMPIDisplayOnly {
+    height: 1rem;
+    min-width: 4rem;
+    margin: 3px;
+    padding: 3px;
+    margin-right: -3rem!important; 
+}
+.averageTimeClass{
+	font-size:12px;
+}
+.ossLeadsNumberBox {
+	margin-left: -3rem!important;
+}
+.OSSBarGraph {
+	margin-top: -6rem;
+    position: absolute;
+}
+.leadsNumberClass{
+	font-size:10px;
+	font-weight:bold;
+	margin-right:-3rem;
+}
+.leadsNumberClassAverageCompleted{
+	font-size:13px;
+	font-weight:bold;
+	margin-right:-3rem;
+	width: 40%;
+    text-align: left;
+    margin-left: 30px;
+}
+.clockIcon {
+	margin-left: 30px;
+}
+.leadsNumberClassAverageCompletedDigits{
+	font-size:13px;
+	font-weight:bold;
+}
+.leadsFactoryParametersSecondColumn {
+	margin-left: 60px;
+}
+.sapMPI.sapMPIDisplayOnly {
+    height: 1rem;
+    min-width: 4rem;
+    margin: 3px;
+    padding: 3px;
+}
+.exportButtonClass .sapMBtnInner{
+    border-radius: 30px !important;
+    width: 150% !important;
+    height: 171% !important;
+    font-size: 15px !important;
+    padding: 9px !important;
+    background: #e8743b !important;
+    color: white !important;
+    font-weight: bold !important;
+    margin-right: -1rem;
+
+}
+.callTrackingLabelClass{
+	
+    font-size: 15px;
+    font-weight: bolder;
+    color: black;
+
+}
+.homeBtnClass .sapMBtnTransparent {
+    background-image: none;
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: none !important;
+    color: black;
+    font-size: 16px;
+}
+.formLeadProvidedClass{
+	    font-size: 18px;
+    font-weight: bold;
+}
+.formLabelLeadProvidedClass{
+font-size: 18px;	
+}
+.onlinePercentage{
+	    font-size: 20px !important;
+    font-weight: bold !important;
+    color: #e0520e !important;
+}
+.leadsAwaitingClass{
+	font-size: 16px;
+}
+.titleSizeClass{
+	font-size: 19px;
+	font-weight:bold;	
+}
+
+.dateTimeBoxClass .sapMInputBaseContentWrapper {
+    height: 1.625rem;
+    width: 115% !important;
+}
+.trackingLeadsNoCLass{
+    font-size: 30px;
+    font-weight: 200;
+
+}
+.trackingLeadstextCLass{
+    font-size: 15px;
+    font-weight: 400;
+
+}
+.sapUiVkContainerBase {
+    border: none;
+    position: relative;
+    width: 100%;
+    height: 85% !important;
+}
+
+.classLegend1 {
+	margin-left: 10px !important;
+}
+.classLegend2 {
+	margin-left: 10px !important;
+}
+.classLegend3 {
+	margin-left: 10px !important;
+}
+.classLegend4 {
+	margin-left: 10px !important;
+}
+
+.classLegend1 .sapUiIcon {
+    position: relative;
+    cursor: default;
+    text-align: center;
+    display: inline-block;
+    color: rgb(171,219,242);
+    vertical-align: bottom;
+    line-height: 1;
+}
+.classLegend2 .sapUiIcon {
+    position: relative;
+    cursor: default;
+    text-align: center;
+    display: inline-block;
+    color: rgb(92,186,229);
+    vertical-align: bottom;
+    line-height: 1;
+}
+.classLegend3 .sapUiIcon {
+    position: relative;
+    cursor: default;
+    text-align: center;
+    display: inline-block;
+    color: rgb(0,143,214);
+    vertical-align: bottom;
+    line-height: 1;
+}
+.classLegend4 .sapUiIcon {
+    position: relative;
+    cursor: default;
+    text-align: center;
+    display: inline-block;
+    color: rgb(30,87,117);
+    vertical-align: bottom;
+    line-height: 1;
+}
+.ossScreen.sapUiVlt.sapUiContentPadding>.sapuiVltCell:not(:last-child) {
+    padding-bottom: 0rem!important;
+    box-sizing: border-box;
+}
+.classLegendtext{
+	font-weight: bold;
+}
+.columnTitleClass{
+	font-weight: bolder !important;
+}
+.iconClassHyperlink{
+	font-size:1.5rem!important;
+}
+.iconClassCancelIcon{
+	font-size:1rem!important;
+}
+.sapUiBlockCellTitle {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.sapFDynamicPageTitleMain>.sapFDynamicPageTitleMainInner .sapFDynamicPageTitleMainActions {
+    margin-left: auto;
+    min-width: 48px;
+    flex-basis: 300px !important;
+}
+
+/* For GEO Map Modified */
+.sapUiSizeCompact .sapMSegBIcons:not(.sapMSegBBtnMixed) .sapMImg, .sapUiSizeCompact .sapMSegBIcons:not(.sapMSegBBtnMixed) .sapUiIcon {
+    padding-left: 0.4375rem;
+    padding-right: 0.4375rem;
+    height: -5rem;
+    background-color: white !important;
+    /* color: white; */
+}
+
+.sapUiSizeCompact .sapMSegBIcons(.sapMSegBBtnMixed) .sapMImg, .sapUiSizeCompact .sapMSegBIcons:not(.sapMSegBBtnMixed) .sapUiIcon {
+    padding-left: 0.4375rem;
+    padding-right: 0.4375rem;
+    height: -5rem;
+    background-color: white !important;
+    /* color: white; */
+}
+
+.sapUiSizeCompact .sapMSegBBtn .sapMSegBBtnInner {
+    height: 0rem;
+    line-height: 1.5rem;
+    padding-left: 0.4375rem;
+    padding-right: 0.4375rem;
+}
+
+.classGeoMapUS {
+	padding-bottom: 0rem !important;
+	border-bottom-color: white!important;
+}
+
+.classGeoMapAKHI {
+	margin-top: -11rem !important;
+    margin-bottom: -2rem;
+	padding-top: 0rem !important;
+	border-bottom-color: white!important;
+}
+
+.sapMPanelContent:not(.sapMPanelBGTransparent) {
+	padding: 0rem !important;
+    border-bottom: 1px solid #ffffff !important;
+}
+
+.sapMSegB {
+    vertical-align: top;
+    position: relative;
+    visibility: hidden;
+}
+
+.panelclassGeoMapUS {
+	margin-top: 4rem !important; 
+}
+
+.panelclassGeoMapAKHI {
+	margin-top: 5rem !important;
+}
+.panelclassGeoMapAKHIOSS {
+	margin-top: 5rem !important;
+	margin-right: -1rem
+}
+.OSSAKHIMapsBox {
+	margin-top: -7rem;
+    margin-bottom: -2rem;
+}
+.sapUiBlockLayoutBackgroundDashboard:not(.sapUiBlockLayoutSizeS) .sapUiBlockLayoutRow:last-child .sapUiBlockCellContent {
+    margin-bottom: 0.5rem;
+    padding-right: 0rem;
+    padding-left: 1rem;
+}
+
+.sapUiBlockLayoutBackgroundDashboard:not(.sapUiBlockLayoutSizeS) .sapUiBlockLayoutRow:first-child .sapUiBlockCellContent {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    height: auto;
+}
+
+.reasonVerLayout2 {
+	margin-top: 3px;
+}
+.sapUiBody {
+    position: relative;
+    cursor: default;
+    text-align: center;
+    display: inline-block;
+}
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+/*.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green; 
+}*/
+.loader {
+
+
+  margin: auto !important;
+
+
+  border: 20px solid #EAF0F6;
+
+
+  border-radius: 50%;
+
+
+  border-top: 20px solid #179443;
+
+
+  width: 200px;
+
+
+  height: 200px;
+
+
+  animation: spinner 4s linear infinite;
+
+
+}
+
+
+ 
+
+
+@keyframes spinner {
+
+
+  0% { transform: rotate(0deg); }
+
+
+  100% { transform: rotate(360deg); }
+
+
+}

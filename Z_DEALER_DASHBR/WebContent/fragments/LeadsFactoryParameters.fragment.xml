@@ -1,0 +1,63 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" class="sapUiSizeCompact">
+	<Toolbar style="Clear">
+		<Title text="Leads Provided: Various Sources"
+			class="titleSizeClass" />
+		<ToolbarSpacer />
+	</Toolbar>
+	<l:HorizontalLayout class="sapUiLargeMarginTop">
+		<l:VerticalLayout class="sapUiContentPadding">
+			<l:HorizontalLayout>
+				<Label text="Digital: " class="formLabelLeadProvidedClass" />
+				<Text text="{SelectionParameterModel>/Digital}"
+					class="sapUiTinyMarginBegin formLeadProvidedClass" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Label text="Direct Mail: " class="formLabelLeadProvidedClass" />
+				<Text text="{SelectionParameterModel>/DirectMail}"
+					class="sapUiTinyMarginBegin formLeadProvidedClass" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Label text="Email: " class="formLabelLeadProvidedClass" />
+				<Text text="{SelectionParameterModel>/Email}"
+					class="sapUiTinyMarginBegin formLeadProvidedClass" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Label text="Gen Adv: " class="formLabelLeadProvidedClass" />
+				<Text text="{SelectionParameterModel>/GenAdv}"
+					class="sapUiTinyMarginBegin formLeadProvidedClass" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Label text="DLS ACE Hardware: " class="formLabelLeadProvidedClass" />
+				<Text text="{SelectionParameterModel>/Hardware}"
+					class="sapUiTinyMarginBegin formLeadProvidedClass" />
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+		<l:VerticalLayout class="sapUiContentPadding leadsFactoryParametersSecondColumn">
+			<l:HorizontalLayout>
+				<Label text="Locator: " class="formLabelLeadProvidedClass" />
+				<Text text="{SelectionParameterModel>/Locator}"
+					class="sapUiTinyMarginBegin formLeadProvidedClass" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Label text="Online Scheduling: " class="formLabelLeadProvidedClass" />
+				<Text text="{SelectionParameterModel>/OnlineScheduling}"
+					class="sapUiTinyMarginBegin formLeadProvidedClass" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Label text="Print: " class="formLabelLeadProvidedClass" />
+				<Text text="{SelectionParameterModel>/Print}"
+					class="sapUiTinyMarginBegin formLeadProvidedClass" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Label text="Social Media: " class="formLabelLeadProvidedClass" />
+				<Text text="{SelectionParameterModel>/SocialMedia}"
+					class="sapUiTinyMarginBegin formLeadProvidedClass" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Label text="Web Campaigns: " class="formLabelLeadProvidedClass" />
+				<Text text="{SelectionParameterModel>/WebCampaigns}"
+					class="sapUiTinyMarginBegin formLeadProvidedClass" />
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+	</l:HorizontalLayout>
+</core:FragmentDefinition>

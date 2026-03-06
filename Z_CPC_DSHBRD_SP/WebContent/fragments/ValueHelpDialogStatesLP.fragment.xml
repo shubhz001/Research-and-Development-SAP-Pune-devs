@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact">
+ <SelectDialog
+		noDataText="No State Found"
+		title="States"
+		liveChange="handleStatesLPLiveSearch"
+		search="handleStatesLPLiveSearch"
+		confirm="handleStatesLPValueHelpConfirm"
+		cancel="handleStatesLPClose"
+		multiSelect="true"
+		rememberSelections="true" 
+		items="{
+			path: '/States'
+		}"> 
+		<StandardListItem
+			title="{A2HRGR7SP5KY5T1Q9QHRQCALDERH}" />
+	</SelectDialog>  
+</core:FragmentDefinition>
